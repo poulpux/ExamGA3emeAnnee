@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5962008933396369917}
   - component: {fileID: 2666134377577442773}
   - component: {fileID: 760031939753689488}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Peon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

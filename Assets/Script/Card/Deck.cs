@@ -23,7 +23,7 @@ public class Deck : GetInput
         SetTeam();
         Melange();
 
-        isInvoquingEvent.AddListener(() => player.TryInvoqueCard( currentCards[0]));
+        isInvoquingEvent.AddListener(() => PlayCard(0));
     }
 
     private void Melange()
@@ -43,6 +43,17 @@ public class Deck : GetInput
 
             copiedList.RemoveAt(index);
             total--;
+        }
+    }
+
+    private void PlayCard(int index)
+    {
+        if (player.TryInvoqueCard(currentCards[index]))
+        {
+            backCard.Add(currentCards[index]);
+            currentCards[index] = nextCard;
+            nextCard = backCard[0];
+            backCard.RemoveAt(0);
         }
     }
 
