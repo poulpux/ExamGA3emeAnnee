@@ -21,7 +21,7 @@ public class GetInput : MonoBehaviour
     protected virtual void Awake()
     {
         inputC = new InputSystemClavier();
-        inputM = new InputSystemManette();  
+        inputM = new InputSystemManette();
     }
 
     private void OnEnable()

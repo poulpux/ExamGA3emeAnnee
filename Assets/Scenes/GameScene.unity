@@ -1805,6 +1805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17734412097d67d46b6f4eac1901a020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  config: 1
   deck: {fileID: 1268432475}
   C1: {fileID: 487265557}
   C2: {fileID: 179391242}
@@ -1813,7 +1814,13 @@ MonoBehaviour:
   visuC1: {fileID: 1681451347}
   visuC2: {fileID: 2037782823}
   visuC3: {fileID: 1598345637}
-  visuNextCard: {fileID: 0}
+  visuNextCard: {fileID: 1264351732}
+  cadre1: {fileID: 487265558}
+  cadre2: {fileID: 179391243}
+  cadre3: {fileID: 1656853708}
+  basicColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedColor: {r: 0.8962264, g: 0.584157, b: 0, a: 1}
+  selectedCard: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4525,6 +4532,7 @@ MonoBehaviour:
   playACardEvent:
     m_PersistentCalls:
       m_Calls: []
+  selectedCard: {fileID: 493026497}
 --- !u!1 &1280593146
 GameObject:
   m_ObjectHideFlags: 0
@@ -4949,6 +4957,7 @@ MonoBehaviour:
   playACardEvent:
     m_PersistentCalls:
       m_Calls: []
+  selectedCard: {fileID: 1832765103}
 --- !u!1 &1433480134
 GameObject:
   m_ObjectHideFlags: 0
@@ -6407,6 +6416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17734412097d67d46b6f4eac1901a020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  config: 0
   deck: {fileID: 1419819473}
   C1: {fileID: 1832420093}
   C2: {fileID: 870244041}
@@ -6416,6 +6426,12 @@ MonoBehaviour:
   visuC2: {fileID: 2047358560}
   visuC3: {fileID: 1450076923}
   visuNextCard: {fileID: 0}
+  cadre1: {fileID: 1832420094}
+  cadre2: {fileID: 870244042}
+  cadre3: {fileID: 284857782}
+  basicColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedColor: {r: 0.8962264, g: 0.584157, b: 0, a: 1}
+  selectedCard: 2
 --- !u!1 &1835775967
 GameObject:
   m_ObjectHideFlags: 0
