@@ -18,6 +18,7 @@ public class Deck : GetInput
     [HideInInspector] public UnityEvent playACardEvent = new UnityEvent();
     protected bool J1;
     protected PlayerElixir player;
+    [SerializeField] CardSelectionUI selectedCard;
 
     protected override void Awake()
     {
@@ -28,7 +29,7 @@ public class Deck : GetInput
         SetTeam();
         Melange();
 
-        isInvoquingEvent.AddListener(() => PlayCard(0));
+        isInvoquingEvent.AddListener(() => PlayCard(selectedCard.selectedCard-1));
     }
 
     private void Melange()
