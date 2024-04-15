@@ -16,4 +16,10 @@ public class Card : MonoBehaviour
     [SerializeField] protected int cost;
     protected TYPE type;
     [SerializeField] protected float damage;
+    [HideInInspector] public bool J1;
+
+    public virtual void Invoque(Vector3 spawnPos)
+    {
+
+    }
 }

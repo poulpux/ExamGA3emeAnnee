@@ -145,7 +145,7 @@ public partial class @InputSystemClavier: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c8fe39a3-3025-4c02-8a39-af43ab612f74"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

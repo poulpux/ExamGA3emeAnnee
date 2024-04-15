@@ -7,7 +7,7 @@ using UnityEngine.Windows;
 
 public class GetInput : MonoBehaviour
 {
-    private enum JNumber
+    public enum JNumber
     {
         PLAYER1,
         PLAYER2
@@ -15,8 +15,8 @@ public class GetInput : MonoBehaviour
     private InputSystemManette inputM;
     private InputSystemClavier inputC;
     protected Vector2 direction;
-    protected UnityEvent isInvoquingEvent, isSwitchLeftEvent, isSwitchRightEvent;
-    [SerializeField] private JNumber config;
+    protected UnityEvent isInvoquingEvent = new UnityEvent(), isSwitchLeftEvent = new UnityEvent(), isSwitchRightEvent = new UnityEvent();
+    public JNumber config;
 
     protected virtual void Awake()
     {
@@ -94,6 +94,9 @@ public class GetInput : MonoBehaviour
         inputM.Enable();
         inputM.Control.Move.performed += GetDirection;
         inputM.Control.Move.canceled += DirectionSleep;
+        inputM.Control.Invoque.performed += CallInvoque;
+        inputM.Control.SwitchCardLeft.performed += CallSwitchLeft;
+        inputM.Control.SwitchCardRight.performed += CallSwitchRight;
     }
     
     private void InputSysMannetteDisable()
@@ -101,5 +104,8 @@ public class GetInput : MonoBehaviour
         inputM.Enable();
         inputM.Control.Move.performed -= GetDirection;
         inputM.Control.Move.canceled -= DirectionSleep;
+        inputM.Control.Invoque.performed -= CallInvoque;
+        inputM.Control.SwitchCardLeft.performed -= CallSwitchLeft;
+        inputM.Control.SwitchCardRight.performed -= CallSwitchRight;
     }
 }

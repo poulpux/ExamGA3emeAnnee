@@ -15,4 +15,10 @@ public class Troupe : Card
     {
         
     }
+
+    public override void Invoque(Vector3 spawnPos)
+    {
+        GameObject objet =  Instantiate(gameObject);
+        objet.transform.position = spawnPos;
+    }
 }

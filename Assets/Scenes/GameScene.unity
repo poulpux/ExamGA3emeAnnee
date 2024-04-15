@@ -123,88 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &12448396
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 12448398}
-  - component: {fileID: 12448397}
-  m_Layer: 0
-  m_Name: Light 2D
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &12448397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12448396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ComponentVersion: 1
-  m_LightType: 3
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 0.08018869, g: 1, b: 0.96204025, a: 1}
-  m_Intensity: 100
-  m_LightVolumeIntensity: 1
-  m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
-  m_LightCookieSprite: {fileID: 0}
-  m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 0
-  m_NormalMapDistance: 3
-  m_NormalMapQuality: 2
-  m_UseNormalMap: 0
-  m_ShadowIntensityEnabled: 0
-  m_ShadowIntensity: 0.75
-  m_ShadowVolumeIntensityEnabled: 0
-  m_ShadowVolumeIntensity: 0.75
-  m_LocalBounds:
-    m_Center: {x: 0, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 0.37
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
---- !u!4 &12448398
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12448396}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.36, y: -0.75, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1131199295}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &18350876
 GameObject:
   m_ObjectHideFlags: 0
@@ -2949,7 +2867,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 12448398}
   - {fileID: 171917291}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3174,6 +3091,7 @@ GameObject:
   - component: {fileID: 1268432472}
   - component: {fileID: 1268432473}
   - component: {fileID: 1268432474}
+  - component: {fileID: 1268432475}
   m_Layer: 8
   m_Name: Player2
   m_TagString: Untagged
@@ -3340,6 +3258,29 @@ MonoBehaviour:
   GetElixirEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1268432475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268432468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44d0a6b38be42b4c933558f4c2e6c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config: 1
+  cards:
+  - {fileID: 760031939753689488, guid: 1f8b8bfcfb5f3ee4999701b380b0f63a, type: 3}
+  - {fileID: 143587065725019460, guid: 2907c2f1cff206241835ba044a747b99, type: 3}
+  - {fileID: 3242149387255856683, guid: dfcc8592be1acaf45aa5027458f08e3d, type: 3}
+  - {fileID: 1601556963372697432, guid: 7d4052c61a5da264e9dbd4c838e0a93a, type: 3}
+  - {fileID: 4900683108647862976, guid: f01ded7d1e1793d45856e27d518edd24, type: 3}
+  - {fileID: 5624686750842697162, guid: a9da9e3456b79b443ac151d5f4271fa0, type: 3}
+  currentCards: []
+  backCard: []
+  nextCard: {fileID: 0}
 --- !u!1 &1280593146
 GameObject:
   m_ObjectHideFlags: 0
@@ -3567,6 +3508,7 @@ GameObject:
   - component: {fileID: 1419819470}
   - component: {fileID: 1419819471}
   - component: {fileID: 1419819472}
+  - component: {fileID: 1419819473}
   m_Layer: 8
   m_Name: Player1
   m_TagString: Untagged
@@ -3733,6 +3675,29 @@ MonoBehaviour:
   GetElixirEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1419819473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419819466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44d0a6b38be42b4c933558f4c2e6c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config: 0
+  cards:
+  - {fileID: 760031939753689488, guid: 1f8b8bfcfb5f3ee4999701b380b0f63a, type: 3}
+  - {fileID: 143587065725019460, guid: 2907c2f1cff206241835ba044a747b99, type: 3}
+  - {fileID: 3242149387255856683, guid: dfcc8592be1acaf45aa5027458f08e3d, type: 3}
+  - {fileID: 1601556963372697432, guid: 7d4052c61a5da264e9dbd4c838e0a93a, type: 3}
+  - {fileID: 4900683108647862976, guid: f01ded7d1e1793d45856e27d518edd24, type: 3}
+  - {fileID: 5624686750842697162, guid: a9da9e3456b79b443ac151d5f4271fa0, type: 3}
+  currentCards: []
+  backCard: []
+  nextCard: {fileID: 0}
 --- !u!1 &1433480134
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,7 +3938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPos: {fileID: 2138028724}
   prefabElixir: {fileID: 5864764228414619517, guid: d0cedb26b7ab9e24d8e5055b1593259b, type: 3}
-  Cldwn: 0.8
+  Cldwn: 1.5
   random: 0
 --- !u!1 &1566385549
 GameObject:
