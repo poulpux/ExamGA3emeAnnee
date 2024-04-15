@@ -48,10 +48,7 @@ public class Deck : GetInput
 
     private void SetTeam()
     {
-        if(!J1)
-        {
-            foreach (var item in cards)
-                item.J1 = false;
-        }
+        foreach (var item in cards)
+            item.SetTeam(J1);
     }
 }

@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 35686725}
   - component: {fileID: 35686726}
   - component: {fileID: 35686727}
+  - component: {fileID: 35686728}
   m_Layer: 0
   m_Name: TRoyale
   m_TagString: Untagged
@@ -412,6 +413,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &35686728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35686724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65a43c53eb2c4e40b327c96288d0545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfCard: 
+  cost: 0
+  damage: 10
+  pv: 2000
+  J1: 0
+  batType: 3
 --- !u!1 &63387607
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,7 +779,7 @@ Transform:
   m_GameObject: {fileID: 171917289}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: -5.55, y: 0.07, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1045,6 +1064,7 @@ GameObject:
   - component: {fileID: 410146120}
   - component: {fileID: 410146121}
   - component: {fileID: 410146122}
+  - component: {fileID: 410146123}
   m_Layer: 0
   m_Name: TRight
   m_TagString: Untagged
@@ -1164,6 +1184,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &410146123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410146119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65a43c53eb2c4e40b327c96288d0545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfCard: 
+  cost: 0
+  damage: 10
+  pv: 2000
+  J1: 1
+  batType: 0
 --- !u!1 &432570343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2947,6 +2985,59 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1161178233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1161178234}
+  - component: {fileID: 1161178235}
+  m_Layer: 0
+  m_Name: LoopManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1161178234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161178233}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1333809841}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1161178235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161178233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0436ce36690a550498aa937b4ee744dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftTourDestroyEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  RightTourDestroyEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  MiddleTourDestroyEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1201366443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2958,6 +3049,7 @@ GameObject:
   - component: {fileID: 1201366444}
   - component: {fileID: 1201366445}
   - component: {fileID: 1201366446}
+  - component: {fileID: 1201366447}
   m_Layer: 0
   m_Name: TRight
   m_TagString: Untagged
@@ -3077,6 +3169,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1201366447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201366443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65a43c53eb2c4e40b327c96288d0545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfCard: 
+  cost: 0
+  damage: 10
+  pv: 2000
+  J1: 0
+  batType: 2
 --- !u!1 &1268432468
 GameObject:
   m_ObjectHideFlags: 0
@@ -3258,6 +3368,9 @@ MonoBehaviour:
   GetElixirEvent:
     m_PersistentCalls:
       m_Calls: []
+  UseElixirEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1268432475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3422,6 +3535,7 @@ Transform:
   m_Children:
   - {fileID: 2083672255}
   - {fileID: 1515421684}
+  - {fileID: 1161178234}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1401789827
@@ -3673,6 +3787,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentElixir: 0
   GetElixirEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  UseElixirEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1419819473
@@ -5052,6 +5169,7 @@ GameObject:
   - component: {fileID: 1892308501}
   - component: {fileID: 1892308502}
   - component: {fileID: 1892308503}
+  - component: {fileID: 1892308504}
   m_Layer: 0
   m_Name: TRoyale
   m_TagString: Untagged
@@ -5171,6 +5289,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1892308504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892308500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65a43c53eb2c4e40b327c96288d0545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfCard: 
+  cost: 0
+  damage: 10
+  pv: 2000
+  J1: 1
+  batType: 0
 --- !u!1 &1912888456
 GameObject:
   m_ObjectHideFlags: 0
@@ -5459,6 +5595,7 @@ GameObject:
   - component: {fileID: 1982241598}
   - component: {fileID: 1982241599}
   - component: {fileID: 1982241600}
+  - component: {fileID: 1982241601}
   m_Layer: 0
   m_Name: TLeft
   m_TagString: Untagged
@@ -5578,6 +5715,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1982241601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982241597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65a43c53eb2c4e40b327c96288d0545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfCard: 
+  cost: 0
+  damage: 10
+  pv: 2000
+  J1: 1
+  batType: 0
 --- !u!1 &2003480505
 GameObject:
   m_ObjectHideFlags: 0
@@ -5673,6 +5828,7 @@ GameObject:
   - component: {fileID: 2034433812}
   - component: {fileID: 2034433813}
   - component: {fileID: 2034433814}
+  - component: {fileID: 2034433815}
   m_Layer: 0
   m_Name: TLeft
   m_TagString: Untagged
@@ -5792,6 +5948,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2034433815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034433811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65a43c53eb2c4e40b327c96288d0545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfCard: 
+  cost: 0
+  damage: 10
+  pv: 2000
+  J1: 0
+  batType: 1
 --- !u!1 &2083672254
 GameObject:
   m_ObjectHideFlags: 0
