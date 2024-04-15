@@ -41,7 +41,7 @@ public class Card : MonoBehaviour
     public void SetTeam(bool J1)
     {
         this.J1 = J1;
-        gameObject.layer = LayerMask.NameToLayer(!J1 ? "CollisionP2" : "CollisionP1");
+        gameObject.layer = LayerMask.NameToLayer(J1 ? "CollisionP2" : "CollisionP1");
     }
 
 }
