@@ -12,6 +12,7 @@ public class ElixirBar : MonoBehaviour
     {
         saveBarreScaleX = barre.transform.localScale.x;
         player.GetElixirEvent.AddListener(()=> { StopCoroutine(FieldBar());/* MiseAJourBarre(); */StartCoroutine(FieldBar()); });
+        player.UseElixirEvent.AddListener(()=> { StopCoroutine(FieldBar());fieldBarre.gameObject.SetActive(false); MiseAJourBarre(); });
         MiseAJourBarre();
         fieldBarre.gameObject.SetActive(false);
     }

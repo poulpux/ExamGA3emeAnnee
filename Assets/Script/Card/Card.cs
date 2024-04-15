@@ -13,7 +13,7 @@ public class Card : MonoBehaviour
     }
 
     [SerializeField] protected string nameOfCard;
-    [SerializeField] protected int cost;
+    public int cost;
     protected TYPE type;
     [SerializeField] protected float damage;
     [HideInInspector] public bool J1;

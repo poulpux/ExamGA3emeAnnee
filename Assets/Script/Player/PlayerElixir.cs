@@ -7,12 +7,15 @@ public class PlayerElixir : MonoBehaviour
 {
     [HideInInspector] public int currentElixir;
     [HideInInspector] public UnityEvent GetElixirEvent = new UnityEvent();
+    [HideInInspector] public UnityEvent UseElixirEvent = new UnityEvent();
 
-    public bool TryInvoqueCard(int cost)
+    public bool TryInvoqueCard(Card card)
     {
-        if (cost <= currentElixir)
+        if (card.cost <= currentElixir)
         {
-            currentElixir -= cost;
+            currentElixir -= card.cost;
+            card.Invoque(transform.position);
+            UseElixirEvent.Invoke();
             return true;
         }
         return false;

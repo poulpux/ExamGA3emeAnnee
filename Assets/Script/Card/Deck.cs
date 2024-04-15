@@ -23,7 +23,7 @@ public class Deck : GetInput
         SetTeam();
         Melange();
 
-        isInvoquingEvent.AddListener(() => currentCards[0].Invoque(transform.position));
+        isInvoquingEvent.AddListener(() => player.TryInvoqueCard( currentCards[0]));
     }
 
     private void Melange()
