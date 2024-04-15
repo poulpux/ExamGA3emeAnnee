@@ -47,7 +47,7 @@ public class ElixirSpawner : MonoBehaviour
 
     private bool CheckCollision(Vector3 position)
     {
-        Collider[] colliders = Physics.OverlapSphere(position, 0.2f, (1<< LayerMask.NameToLayer("Default")));
+        Collider[] colliders = Physics.OverlapSphere(position, 0.2f/*, (1<< LayerMask.NameToLayer("Default"))*/);
         return colliders.Length > 0;
     }
 }
