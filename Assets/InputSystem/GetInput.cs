@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
 
@@ -11,10 +12,10 @@ public class GetInput : MonoBehaviour
         PLAYER1,
         PLAYER2
     }
-    private Rigidbody rb;
     private InputSystemManette inputM;
     private InputSystemClavier inputC;
     protected Vector2 direction;
+    protected UnityEvent isInvoquingEvent, isSwitchLeftEvent, isSwitchRightEvent;
     [SerializeField] private JNumber config;
 
     protected virtual void Awake()
@@ -29,7 +30,6 @@ public class GetInput : MonoBehaviour
             InputSysClavierEnable();
         else
             InputSysMannetteEnable();
-
     }
 
     private void OnDisable()
@@ -45,6 +45,24 @@ public class GetInput : MonoBehaviour
     {
         direction = config == JNumber.PLAYER1 ? Vector2.one * value.ReadValue<Vector2>() : -Vector2.one * value.ReadValue<Vector2>();
     }
+    
+    private void CallInvoque(InputAction.CallbackContext value)
+    {
+        if (value.ReadValue<float>() > 0f)
+            isInvoquingEvent.Invoke();
+    }
+    
+    private void CallSwitchLeft(InputAction.CallbackContext value)
+    {
+        if (value.ReadValue<float>() > 0f)
+            isSwitchLeftEvent.Invoke();
+    }
+    
+    private void CallSwitchRight(InputAction.CallbackContext value)
+    {
+        if (value.ReadValue<float>() > 0f)
+            isSwitchRightEvent.Invoke();
+    }
 
     private void DirectionSleep(InputAction.CallbackContext value)
     {
@@ -56,6 +74,9 @@ public class GetInput : MonoBehaviour
         inputC.Enable();
         inputC.Control.Move.performed += GetDirection;
         inputC.Control.Move.canceled += DirectionSleep;
+        inputC.Control.Invoque.performed += CallInvoque;
+        inputC.Control.SwitchCardLeft.performed += CallSwitchLeft;
+        inputC.Control.SwitchCardRight.performed += CallSwitchRight;
     }
     
     private void InputSysClavierDisable()
@@ -63,6 +84,9 @@ public class GetInput : MonoBehaviour
         inputC.Enable();
         inputC.Control.Move.performed -= GetDirection;
         inputC.Control.Move.canceled -= DirectionSleep;
+        inputC.Control.Invoque.performed -= CallInvoque;
+        inputC.Control.SwitchCardLeft.performed -= CallSwitchLeft;
+        inputC.Control.SwitchCardRight.performed -= CallSwitchRight;
     }
     
     private void InputSysMannetteEnable()

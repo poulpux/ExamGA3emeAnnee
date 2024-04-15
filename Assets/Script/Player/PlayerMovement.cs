@@ -11,16 +11,11 @@ public class PlayerMovement : GetInput
     protected override void Awake()
     {
         base.Awake();
-        InstantiateAll();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        rb.velocity = direction * moveSpd;
-    }
-
-    private void InstantiateAll()
-    {
-        rb = GetComponent<Rigidbody2D>(); 
+        rb.velocity = Vector2.ClampMagnitude(direction,1f) * moveSpd;
     }
 }
