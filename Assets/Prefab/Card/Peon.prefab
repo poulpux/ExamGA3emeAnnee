@@ -138,5 +138,6 @@ MonoBehaviour:
   damage: 20
   pv: 0
   J1: 1
+  visuUi: {fileID: 1063759338989976392, guid: ce8464ac595d4da48bf5791c7aa30094, type: 3}
   moveSpd: 3
   range: 1

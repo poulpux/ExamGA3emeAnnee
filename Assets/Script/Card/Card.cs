@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Collider2D))]
 public class Card : MonoBehaviour
@@ -17,6 +18,7 @@ public class Card : MonoBehaviour
     protected TYPE type;
     [SerializeField] protected float damage, pv;
     public bool J1;
+    public Image visuUi;
 
     public virtual void Invoque(Vector3 spawnPos)
     {
