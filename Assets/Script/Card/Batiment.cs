@@ -15,19 +15,20 @@ public class Batiment : Card
 
     [SerializeField] BATIMENTTYPE batType;
     private SpriteRenderer spriteRenderer;
+    
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();    
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P) && batType == BATIMENTTYPE.LEFT)
-        {
-            TakeDamage(40000);
-        }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.P) && batType == BATIMENTTYPE.MIDDLE && !J1)
+    //    {
+    //        TakeDamage(40000);
+    //    }
 
-    }
+    //}
 
     protected override void GetDestroy()
     {
@@ -35,7 +36,8 @@ public class Batiment : Card
             base.GetDestroy();
         else
         {
-            spriteRenderer.color = J1 ? new Color(185f / 255f, spriteRenderer.color.g, spriteRenderer.color.b) : new Color(spriteRenderer.color.r, 185f / 255f, 185f / 255f);
+            GetComponent<Collider2D>().enabled = false; 
+            spriteRenderer.color = new Color(222f/255f, 222f / 255f, 222f / 255f);
             if (batType == BATIMENTTYPE.LEFT)
                 LoopManager.Instance.LeftTourDestroyEvent.Invoke(J1);
             else if (batType == BATIMENTTYPE.RIGHT)
