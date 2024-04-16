@@ -17,7 +17,6 @@ public partial class Troupe : StateManager
     protected override void Update()
     {
         base.Update();
-        print(pv);
     }
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

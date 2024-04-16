@@ -6,6 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(GetInput))]
 public class PlayerElixir : MonoBehaviour
 {
+    [SerializeField] private int startElixir = 5;
     [HideInInspector] public int currentElixir;
     [HideInInspector] public UnityEvent GetElixirEvent = new UnityEvent();
     [HideInInspector] public UnityEvent UseElixirEvent = new UnityEvent();
@@ -14,6 +15,7 @@ public class PlayerElixir : MonoBehaviour
     private void Awake()
     {
         team = GetComponent<GetInput>();
+        currentElixir = startElixir;
     }
     public bool TryInvoqueCard(Card card)
     {

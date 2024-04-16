@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Sort : Card
 {
@@ -19,10 +20,12 @@ public class Sort : Card
 
     void Update()
     {
-        transform.position += direction * Time.deltaTime * spd ;
+        transform.position += this.direction * Time.deltaTime * spd ;
 
-        //if (Vector3.Distance(new Vector3(transform.position.x, transform.position.y, 0f), new Vector3(finalPos.x, finalPos.y, 0f)) < 0.02f)
-        //    Destroy(gameObject);
+        Vector3 localDir = finalPos - transform.position;
+        Vector3 direction = Vector3.Distance(finalPos, transform.position) >= 1f ? Vector3.ClampMagnitude(localDir, 1f) : Vector3.ClampMagnitude(localDir * 1000f, 1f);
+        if (direction != this.direction)
+            Destroy(gameObject);
     }
 
     public void SetAllValue(Card target, float spd, int damage, bool zone = false)
@@ -31,13 +34,14 @@ public class Sort : Card
         this.spd = spd;
         this.zone = zone;
         this.damage = damage;
-        direction = target.transform.position - transform.position;
+
+        Vector3 localDir = target.transform.position - transform.position;
+        direction =Vector3.Distance( target.transform.position, transform.position) >=1f ? Vector3.ClampMagnitude( localDir, 1f) : Vector3.ClampMagnitude(localDir * 1000f, 1f);
         finalPos = target.transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.name);
         if (collision.gameObject == target.gameObject)
         {
             target.TakeDamage(damage);
