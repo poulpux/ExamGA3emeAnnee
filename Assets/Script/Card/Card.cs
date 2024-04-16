@@ -20,9 +20,9 @@ public class Card : MonoBehaviour
     protected string nameOfCard;
     protected int cost;
     protected TYPE type;
-    protected int damage, pv;
+    public int damage, pv;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         InstantiateAll();
     }

@@ -24,13 +24,18 @@ public class Batiment : Card
     private BATIMENTTYPE batType;
     private Sort bulletPrefab;
     private float attackSpd;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        InstantiateAll();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (batType == BATIMENTTYPE.MIDDLE)
+            activate = false;
+    }
+
     void Start()
     {
-        InstantiateAll();
-        spriteRenderer = GetComponent<SpriteRenderer>();  
-        if(batType == BATIMENTTYPE.MIDDLE)
-            activate = false;
-
         LoopManager.Instance.LeftTourDestroyEvent.AddListener((J12) => { if (J1 == J12 && !activate && batType == BATIMENTTYPE.MIDDLE) Activate(); });
     }
 

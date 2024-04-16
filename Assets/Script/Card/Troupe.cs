@@ -8,13 +8,9 @@ public partial class Troupe : StateManager
     [SerializeField] private ScriptableObjectTroupe troupeInfo;
     [SerializeField] protected float moveSpd, range;
 
-    void Awake()
+    protected override void Awake()
     {
-
-    }
-
-    private void Start()
-    {
+        base.Awake();
         InstantiateAll();
     }
 

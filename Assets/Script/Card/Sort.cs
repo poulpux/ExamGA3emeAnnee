@@ -11,8 +11,9 @@ public class Sort : Card
     float spd;
     Card target;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         InstantiateAll();
     }
 
