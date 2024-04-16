@@ -38,10 +38,8 @@ public class Card : MonoBehaviour
     {
         pv -= nbDamage;
         spriteRenderer.color = CalculateColor(((float)pv / (float)cardInfo.pv));
-        print((float)(pv / cardInfo.pv));
         if (pv < 0)
             GetDestroy();
-
     }
 
     protected virtual void GetDestroy()
@@ -70,7 +68,6 @@ public class Card : MonoBehaviour
     private Color CalculateColor(float lifePourcentage01)
     { 
         float maxLight = startColor.r > startColor.g &&  startColor.r > startColor.b ? startColor.r : startColor.g > startColor.b ? startColor.g : startColor.b;
-        //print(maxLight + " " + lifePourcentage01);
         return new Color(Calculator(startColor.r, maxLight, lifePourcentage01), Calculator(startColor.g, maxLight, lifePourcentage01), Calculator(startColor.b, maxLight, lifePourcentage01));
     }
 

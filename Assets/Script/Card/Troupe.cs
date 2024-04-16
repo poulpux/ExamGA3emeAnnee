@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[RequireComponent(typeof(Rigidbody2D))]
 public partial class Troupe : StateManager
 {
     [SerializeField] private ScriptableObjectTroupe troupeInfo;
     [SerializeField] protected float moveSpd, range;
+    private bool active;
 
     protected override void Awake()
     {
         base.Awake();
         InstantiateAll();
+        StartCoroutine(SpawnTimer());
     }
 
     protected override void Update()
@@ -30,6 +32,8 @@ public partial class Troupe : StateManager
 
         moveSpd = troupeInfo.moveSpd;
         range = troupeInfo.range;
+
+        rb = GetComponent<Rigidbody2D>();
     }
     public override void Invoque(Vector3 spawnPos)
     {
@@ -42,6 +46,11 @@ public partial class Troupe : StateManager
         gameObject.layer = LayerMask.NameToLayer(J1 ? "TroupeP1" : "TroupeP2");
     }
 
-
+    private IEnumerator SpawnTimer()
+    {
+        yield return new WaitForSeconds(0.8f);
+        active = true;
+        yield break;
+    }
 
 }

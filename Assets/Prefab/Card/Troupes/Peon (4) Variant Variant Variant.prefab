@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: visuUi
       value: 
       objectReference: {fileID: 7264862675949860545, guid: 732c2cf0414fb1e40aa37405bd6af906, type: 3}
+    - target: {fileID: 5745609340701264706, guid: a9da9e3456b79b443ac151d5f4271fa0, type: 3}
+      propertyPath: distInterest
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6267309346691623984, guid: a9da9e3456b79b443ac151d5f4271fa0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

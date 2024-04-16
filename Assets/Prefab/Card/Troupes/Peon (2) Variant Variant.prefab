@@ -12,10 +12,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Peon (2) Variant Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1701664899260205382, guid: dfcc8592be1acaf45aa5027458f08e3d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3242149387255856683, guid: dfcc8592be1acaf45aa5027458f08e3d, type: 3}
       propertyPath: visuUi
       value: 
       objectReference: {fileID: 6449622966350147548, guid: 83f5ef21ea76132439088bb0290650e2, type: 3}
+    - target: {fileID: 3263995086481637539, guid: dfcc8592be1acaf45aa5027458f08e3d, type: 3}
+      propertyPath: J1
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3263995086481637539, guid: dfcc8592be1acaf45aa5027458f08e3d, type: 3}
       propertyPath: visuUi
       value: 

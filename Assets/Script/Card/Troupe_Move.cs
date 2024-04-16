@@ -5,14 +5,28 @@ using UnityEngine;
 public partial class Troupe
 {
     State move = new State();
-
+    [SerializeField] private float distInterest = 2f;
+    Vector3 targetMove;
+    private Card interestTarget;
+    private Rigidbody2D rb;
     private void onMoveEnter()
     {
-       
+       //Set une target
     }
     private void onMoveUpdate()
     {
+        if(interestTarget != null && Vector3.Distance(transform.position, interestTarget.transform.position)> distInterest) 
+            interestTarget = null;
 
+        if (interestTarget == null)
+            DetectInterrest();
+
+        if(targetMove ==  null)
+            SetTargetMove();
+
+        MoveToTarget();
+
+        SwitchState();
     }
 
     private void onMoveExit()
@@ -21,4 +35,49 @@ public partial class Troupe
     }
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    private void SetTargetMove()
+    {
+
+    }
+
+    private void DetectInterrest()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, distInterest, !J1 ? (1 << LayerMask.NameToLayer("TroupeP1")) : (1 << LayerMask.NameToLayer("TroupeP2")));
+        foreach (var item in colliders)
+        {
+            Card targetCard = item.GetComponent<Card>();
+            if (targetCard != null && targetCard.cardInfo.type != TYPE.SORT)
+            {
+                print("detectEnnemy");
+                interestTarget = targetCard;
+                targetMove = item.transform.position;
+            }
+        }
+    }
+    
+    private void SwitchState()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, range, !J1 ? (1 << LayerMask.NameToLayer("TroupeP1")) : (1 << LayerMask.NameToLayer("TroupeP2")));
+        foreach (var item in colliders)
+        {
+            Card targetCard = item.GetComponent<Card>();
+            if (targetCard != null && targetCard.cardInfo.type != TYPE.SORT)
+            {
+                targetAttack = targetCard;
+                ChangeState(attack);
+            }
+        }
+    }
+
+    private void MoveToTarget()
+    {
+        if (targetMove != Vector3.zero)
+        {
+            Vector3 direction = Vector3.ClampMagnitude(targetMove - transform.position, 1f);
+            rb.velocity = direction * moveSpd;
+        }
+        else
+            rb.velocity = Vector3.zero;
+    }
 }

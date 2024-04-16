@@ -5,7 +5,7 @@ using UnityEngine;
 public partial class Troupe
 {
     State attack = new State();
-
+    Card targetAttack;
     private void onAttackEnter()
     {
        

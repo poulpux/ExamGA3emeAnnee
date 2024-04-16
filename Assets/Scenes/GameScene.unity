@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 35686726}
   - component: {fileID: 35686727}
   - component: {fileID: 35686728}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TRoyale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,6 +503,8 @@ MonoBehaviour:
   cardInfo: {fileID: 11400000, guid: f3267fa6804c65c42aa2e9fe3d787e4a, type: 2}
   J1: 0
   visuUi: {fileID: 0}
+  damage: 0
+  pv: 0
   batInfo: {fileID: 11400000, guid: 17249b712e6497d4ea56b8b318da2d39, type: 2}
 --- !u!1 &63387607
 GameObject:
@@ -1281,6 +1283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 356626685}
   - component: {fileID: 356626686}
+  - component: {fileID: 356626687}
   m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
@@ -1355,6 +1358,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &356626687
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356626684}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &410146119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,7 +1415,7 @@ GameObject:
   - component: {fileID: 410146121}
   - component: {fileID: 410146122}
   - component: {fileID: 410146123}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1501,6 +1549,8 @@ MonoBehaviour:
   cardInfo: {fileID: 11400000, guid: 406195dfeb38ea64696b34c22290f4ee, type: 2}
   J1: 1
   visuUi: {fileID: 0}
+  damage: 0
+  pv: 0
   batInfo: {fileID: 11400000, guid: d4b758cf06e1ede4ea76fc0cf79ae1aa, type: 2}
 --- !u!1 &432570343
 GameObject:
@@ -4476,7 +4526,7 @@ GameObject:
   - component: {fileID: 1201366445}
   - component: {fileID: 1201366446}
   - component: {fileID: 1201366447}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4610,6 +4660,8 @@ MonoBehaviour:
   cardInfo: {fileID: 11400000, guid: 406195dfeb38ea64696b34c22290f4ee, type: 2}
   J1: 0
   visuUi: {fileID: 0}
+  damage: 0
+  pv: 0
   batInfo: {fileID: 11400000, guid: d4b758cf06e1ede4ea76fc0cf79ae1aa, type: 2}
 --- !u!1 &1253710505
 GameObject:
@@ -4938,6 +4990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1db679bdae65a4987187805584ed87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startElixir: 5
   currentElixir: 0
   GetElixirEvent:
     m_PersistentCalls:
@@ -5363,6 +5416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1db679bdae65a4987187805584ed87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startElixir: 5
   currentElixir: 0
   GetElixirEvent:
     m_PersistentCalls:
@@ -5669,6 +5723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1511312168}
   - component: {fileID: 1511312169}
+  - component: {fileID: 1511312170}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -5743,6 +5798,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1511312170
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511312167}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1515421683
 GameObject:
   m_ObjectHideFlags: 0
@@ -7430,7 +7530,7 @@ GameObject:
   - component: {fileID: 1892308502}
   - component: {fileID: 1892308503}
   - component: {fileID: 1892308504}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TRoyale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7564,6 +7664,8 @@ MonoBehaviour:
   cardInfo: {fileID: 11400000, guid: f3267fa6804c65c42aa2e9fe3d787e4a, type: 2}
   J1: 1
   visuUi: {fileID: 0}
+  damage: 0
+  pv: 0
   batInfo: {fileID: 11400000, guid: 17249b712e6497d4ea56b8b318da2d39, type: 2}
 --- !u!1 &1912888456
 GameObject:
@@ -7575,6 +7677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1912888457}
   - component: {fileID: 1912888458}
+  - component: {fileID: 1912888459}
   m_Layer: 0
   m_Name: Middle
   m_TagString: Untagged
@@ -7649,6 +7752,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1912888459
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912888456}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1944682296
 GameObject:
   m_ObjectHideFlags: 0
@@ -7854,7 +8002,7 @@ GameObject:
   - component: {fileID: 1982241599}
   - component: {fileID: 1982241600}
   - component: {fileID: 1982241601}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7988,6 +8136,8 @@ MonoBehaviour:
   cardInfo: {fileID: 11400000, guid: 661a9caf30b59cc46a15876a21622dd9, type: 2}
   J1: 1
   visuUi: {fileID: 0}
+  damage: 0
+  pv: 0
   batInfo: {fileID: 11400000, guid: 8f67e66e8e4641142b3ca9bf0fcdc457, type: 2}
 --- !u!1 &2003480505
 GameObject:
@@ -8237,7 +8387,7 @@ GameObject:
   - component: {fileID: 2034433813}
   - component: {fileID: 2034433814}
   - component: {fileID: 2034433815}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8371,6 +8521,8 @@ MonoBehaviour:
   cardInfo: {fileID: 11400000, guid: 661a9caf30b59cc46a15876a21622dd9, type: 2}
   J1: 0
   visuUi: {fileID: 0}
+  damage: 0
+  pv: 0
   batInfo: {fileID: 11400000, guid: 8f67e66e8e4641142b3ca9bf0fcdc457, type: 2}
 --- !u!1 &2037782821
 GameObject:
