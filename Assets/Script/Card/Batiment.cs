@@ -14,24 +14,36 @@ public enum BATIMENTTYPE
 [RequireComponent(typeof(SpriteRenderer))]
 public class Batiment : Card
 {
-    [SerializeField] BATIMENTTYPE batType;
+    [SerializeField] private ScriptableObjectBatiment batInfo;
     private SpriteRenderer spriteRenderer;
-    [SerializeField] float range;
     private Card target;
-    [SerializeField] Sort bulletPrefab;
-    [SerializeField] float attackSpd;
     float timerAttack;
+    private bool activate = true;
+
+    private float range;
+    private BATIMENTTYPE batType;
+    private Sort bulletPrefab;
+    private float attackSpd;
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();    
+        InstantiateAll();
+        spriteRenderer = GetComponent<SpriteRenderer>();  
+        if(batType == BATIMENTTYPE.MIDDLE)
+            activate = false;
+
+        LoopManager.Instance.LeftTourDestroyEvent.AddListener((J12) => { if (J1 == J12 && !activate && batType == BATIMENTTYPE.MIDDLE) Activate(); });
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && batType == BATIMENTTYPE.LEFT)
-        {
-            TakeDamage(40000);
-        }
+
+        if (!activate && batType == BATIMENTTYPE.MIDDLE && pv < cardInfo.pv)
+            Activate();
+        if (Input.GetKeyUp(KeyCode.P) && batType == BATIMENTTYPE.LEFT)
+            TakeDamage(10000);
+
+        if(!activate)
+            return;
 
         UndetectEnnemy();
 
@@ -46,11 +58,17 @@ public class Batiment : Card
 
     }
 
+    private void Activate()
+    {
+        activate = true;
+        spriteRenderer.color = J1 ?  new Color(0f,1f,1f) : new Color(1f,0f,0f);
+    }
+
     private void Attack()
     {
         Sort bullet = Instantiate(bulletPrefab);
         bullet.transform.position = transform.position;
-        bullet.SetAllValue(target, 10f, damage);
+        bullet.SetAllValue(target, 10f, cardInfo.damage);
         timerAttack = 0f;
     }
 
@@ -66,7 +84,7 @@ public class Batiment : Card
         foreach (var item in colliders)
         {
             Card targetCard = item.GetComponent<Card>();
-            if(targetCard != null)  
+            if(targetCard != null && targetCard.cardInfo.type != TYPE.SORT)  
                 target = targetCard;
         }
     }
@@ -80,11 +98,25 @@ public class Batiment : Card
             GetComponent<Collider2D>().enabled = false; 
             spriteRenderer.color = new Color(222f/255f, 222f / 255f, 222f / 255f);
             if (batType == BATIMENTTYPE.LEFT)
+            {
                 LoopManager.Instance.LeftTourDestroyEvent.Invoke(J1);
+                activate = false;
+            }
             else if (batType == BATIMENTTYPE.RIGHT)
+            {
                 LoopManager.Instance.RightTourDestroyEvent.Invoke(J1);
+                activate = false;
+            }
             else if (batType == BATIMENTTYPE.MIDDLE)
                 LoopManager.Instance.MiddleTourDestroyEvent.Invoke(J1);
         }
+    }
+
+    private void InstantiateAll()
+    {
+        range = batInfo.range;
+        batType = batInfo.batType;
+        bulletPrefab = batInfo.bulletPrefab;
+        attackSpd = batInfo.attackSpd;
     }
 }

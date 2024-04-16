@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a195f05cf788ca4784171222cf1713c, type: 3}
-  m_Name: TourMiddle
+  m_Script: {fileID: 11500000, guid: 32d9ef72044b4384fb259fee719fe4e1, type: 3}
+  m_Name: PeonMother
   m_EditorClassIdentifier: 
-  range: 3
-  batType: 3
-  bulletPrefab: {fileID: -6406641252663163753, guid: 429adaf4ba9eb2649a6497c994d0cf00, type: 3}
-  attackSpd: 1.8
+  nameOfCard: Peon
+  cost: 3
+  type: 0
+  damage: 20
+  pv: 520
+  visuUi: {fileID: 1063759338989976392, guid: ce8464ac595d4da48bf5791c7aa30094, type: 3}

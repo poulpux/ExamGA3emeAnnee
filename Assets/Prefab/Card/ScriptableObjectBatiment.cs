@@ -6,7 +6,7 @@ using UnityEngine;
 public class ScriptableObjectBatiment : ScriptableObject
 {
     public float range;
-    [SerializeField] BATIMENTTYPE batType;
-    [SerializeField] Sort bulletPrefab;
-    [SerializeField] float attackSpd;
+    public BATIMENTTYPE batType;
+    public Sort bulletPrefab;
+    public float attackSpd;
 }

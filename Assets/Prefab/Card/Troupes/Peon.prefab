@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5962008933396369917}
   - component: {fileID: 2666134377577442773}
   - component: {fileID: 810166938675265304}
-  m_Layer: 11
+  - component: {fileID: -7122688789380916174}
+  m_Layer: 10
   m_Name: Peon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,11 +134,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8d97f320eda354c8ffd28e6be22a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfCard: Peon
-  cost: 3
-  damage: 10
-  pv: 30
-  J1: 0
+  cardInfo: {fileID: 11400000, guid: 48067116976f0c34bab3e9101a08466d, type: 2}
+  J1: 1
   visuUi: {fileID: 1063759338989976392, guid: ce8464ac595d4da48bf5791c7aa30094, type: 3}
+  troupeInfo: {fileID: 11400000, guid: 40e5f90c0545784448fd719379590cce, type: 2}
   moveSpd: 3
   range: 3
+--- !u!50 &-7122688789380916174
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3598313983452198653}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

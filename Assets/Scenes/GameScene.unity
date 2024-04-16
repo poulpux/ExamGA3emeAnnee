@@ -500,16 +500,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65a43c53eb2c4e40b327c96288d0545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfCard: 
-  cost: 0
-  damage: 0
-  pv: 0
+  cardInfo: {fileID: 11400000, guid: f3267fa6804c65c42aa2e9fe3d787e4a, type: 2}
   J1: 0
   visuUi: {fileID: 0}
-  batType: 3
-  range: 0
-  bulletPrefab: {fileID: 0}
-  attackSpd: 0
+  batInfo: {fileID: 11400000, guid: 17249b712e6497d4ea56b8b318da2d39, type: 2}
 --- !u!1 &63387607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,16 +1498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65a43c53eb2c4e40b327c96288d0545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfCard: 
-  cost: 0
-  damage: 0
-  pv: 0
+  cardInfo: {fileID: 11400000, guid: 406195dfeb38ea64696b34c22290f4ee, type: 2}
   J1: 1
   visuUi: {fileID: 0}
-  batType: 2
-  range: 0
-  bulletPrefab: {fileID: 0}
-  attackSpd: 0
+  batInfo: {fileID: 11400000, guid: d4b758cf06e1ede4ea76fc0cf79ae1aa, type: 2}
 --- !u!1 &432570343
 GameObject:
   m_ObjectHideFlags: 0
@@ -4619,16 +4607,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65a43c53eb2c4e40b327c96288d0545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfCard: 
-  cost: 0
-  damage: 0
-  pv: 0
+  cardInfo: {fileID: 11400000, guid: 406195dfeb38ea64696b34c22290f4ee, type: 2}
   J1: 0
   visuUi: {fileID: 0}
-  batType: 2
-  range: 0
-  bulletPrefab: {fileID: 0}
-  attackSpd: 0
+  batInfo: {fileID: 11400000, guid: d4b758cf06e1ede4ea76fc0cf79ae1aa, type: 2}
 --- !u!1 &1253710505
 GameObject:
   m_ObjectHideFlags: 0
@@ -7579,16 +7561,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65a43c53eb2c4e40b327c96288d0545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfCard: 
-  cost: 0
-  damage: 0
-  pv: 0
+  cardInfo: {fileID: 11400000, guid: f3267fa6804c65c42aa2e9fe3d787e4a, type: 2}
   J1: 1
   visuUi: {fileID: 0}
-  batType: 3
-  range: 0
-  bulletPrefab: {fileID: 0}
-  attackSpd: 0
+  batInfo: {fileID: 11400000, guid: 17249b712e6497d4ea56b8b318da2d39, type: 2}
 --- !u!1 &1912888456
 GameObject:
   m_ObjectHideFlags: 0
@@ -8009,16 +7985,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65a43c53eb2c4e40b327c96288d0545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfCard: 
-  cost: 0
-  damage: 0
-  pv: 0
+  cardInfo: {fileID: 11400000, guid: 661a9caf30b59cc46a15876a21622dd9, type: 2}
   J1: 1
   visuUi: {fileID: 0}
-  batType: 1
-  range: 0
-  bulletPrefab: {fileID: 0}
-  attackSpd: 0
+  batInfo: {fileID: 11400000, guid: 8f67e66e8e4641142b3ca9bf0fcdc457, type: 2}
 --- !u!1 &2003480505
 GameObject:
   m_ObjectHideFlags: 0
@@ -8398,16 +8368,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65a43c53eb2c4e40b327c96288d0545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfCard: 
-  cost: 0
-  damage: 0
-  pv: 0
+  cardInfo: {fileID: 11400000, guid: 661a9caf30b59cc46a15876a21622dd9, type: 2}
   J1: 0
   visuUi: {fileID: 0}
-  batType: 1
-  range: 3
-  bulletPrefab: {fileID: -6406641252663163753, guid: 429adaf4ba9eb2649a6497c994d0cf00, type: 3}
-  attackSpd: 3
+  batInfo: {fileID: 11400000, guid: 8f67e66e8e4641142b3ca9bf0fcdc457, type: 2}
 --- !u!1 &2037782821
 GameObject:
   m_ObjectHideFlags: 0

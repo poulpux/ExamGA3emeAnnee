@@ -17,9 +17,9 @@ public class PlayerElixir : MonoBehaviour
     }
     public bool TryInvoqueCard(Card card)
     {
-        if (card.cost <= currentElixir)
+        if (card.cardInfo.cost <= currentElixir)
         {
-            currentElixir -= card.cost;
+            currentElixir -= card.cardInfo.cost;
             card.SetTeam(team.config == GetInput.JNumber.PLAYER1 ? true: false);
             card.Invoque(transform.position);
 

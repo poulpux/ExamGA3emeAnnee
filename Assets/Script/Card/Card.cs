@@ -12,15 +12,20 @@ public enum TYPE
 
 [RequireComponent(typeof(Collider2D))]
 public class Card : MonoBehaviour
-{ 
-
-    [SerializeField] protected string nameOfCard;
-    public int cost;
-    protected TYPE type;
-    [SerializeField] protected int damage, pv;
+{
+    public ScriptableObjectCard cardInfo;
     public bool J1;
     public Image visuUi;
 
+    protected string nameOfCard;
+    protected int cost;
+    protected TYPE type;
+    protected int damage, pv;
+
+    private void Awake()
+    {
+        InstantiateAll();
+    }
     public virtual void Invoque(Vector3 spawnPos)
     {
 
@@ -31,7 +36,6 @@ public class Card : MonoBehaviour
         pv -= nbDamage;
         if (pv < 0)
             GetDestroy();
-
     }
 
     protected virtual void GetDestroy()
@@ -45,4 +49,12 @@ public class Card : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer(J1 ? "CollisionP2" : "CollisionP1");
     }
 
+    private void InstantiateAll()
+    {
+        nameOfCard = cardInfo.nameOfCard;
+        cost = cardInfo.cost;
+        type = cardInfo.type;
+        damage = cardInfo.damage;
+        pv = cardInfo.pv;
+    }
 }

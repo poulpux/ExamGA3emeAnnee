@@ -133,9 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa06f7febdb9304aa3da70e3dec6fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfCard: 
-  cost: 0
-  damage: 0
-  pv: 0
+  cardInfo: {fileID: 11400000, guid: 06f9c40d427ac0442ba60cd6ea0fb011, type: 2}
   J1: 0
   visuUi: {fileID: 0}
+  sortInfo: {fileID: 11400000, guid: 3c0746942d49c1f4aa7702b85800012c, type: 2}

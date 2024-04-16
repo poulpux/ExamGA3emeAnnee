@@ -5,6 +5,7 @@ using UnityEngine;
 
 public partial class Troupe : StateManager
 {
+    [SerializeField] private ScriptableObjectTroupe troupeInfo;
     [SerializeField] protected float moveSpd, range;
 
     void Awake()
@@ -20,6 +21,7 @@ public partial class Troupe : StateManager
     protected override void Update()
     {
         base.Update();
+        print(pv);
     }
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,8 +31,10 @@ public partial class Troupe : StateManager
         spawn.InitState(onSpawnEnter, onSpawnUpdate,onSpawnExit); 
         move.InitState(onMoveEnter, onMoveUpdate,onMoveExit); 
         attack.InitState(onAttackEnter, onAttackUpdate,onAttackExit);
-        type = TYPE.TROUPE;
         ForcedCurrentState(spawn);
+
+        moveSpd = troupeInfo.moveSpd;
+        range = troupeInfo.range;
     }
     public override void Invoque(Vector3 spawnPos)
     {
@@ -42,6 +46,7 @@ public partial class Troupe : StateManager
         this.J1 = J1;
         gameObject.layer = LayerMask.NameToLayer(J1 ? "TroupeP1" : "TroupeP2");
     }
+
 
 
 }
