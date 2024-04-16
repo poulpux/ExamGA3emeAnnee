@@ -24,6 +24,7 @@ public partial class Troupe : StateManager
         StartCoroutine(SpawnTimer());
         LoopManager.Instance.LeftTourDestroyEvent.AddListener((J1) => { if (J1 != this.J1) ChangeState(move); });
         LoopManager.Instance.RightTourDestroyEvent.AddListener((J1) => { if (J1 != this.J1) ChangeState(move); });
+        rb.freezeRotation = true;
     }
 
     protected override void Update()

@@ -29,6 +29,8 @@ public class Card : MonoBehaviour
     {
         InstantiateAll();
     }
+
+
     public virtual void Invoque(Vector3 spawnPos)
     {
 
