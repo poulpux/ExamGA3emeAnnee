@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(GetInput))]
 public class PlayerElixir : MonoBehaviour
 {
     [HideInInspector] public int currentElixir;
     [HideInInspector] public UnityEvent GetElixirEvent = new UnityEvent();
     [HideInInspector] public UnityEvent UseElixirEvent = new UnityEvent();
+    GetInput team;
 
+    private void Awake()
+    {
+        team = GetComponent<GetInput>();
+    }
     public bool TryInvoqueCard(Card card)
     {
         if (card.cost <= currentElixir)
         {
             currentElixir -= card.cost;
+            card.SetTeam(team.config == GetInput.JNumber.PLAYER1 ? true: false);
             card.Invoque(transform.position);
+
             UseElixirEvent.Invoke();
             return true;
         }

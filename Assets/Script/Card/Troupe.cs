@@ -37,5 +37,11 @@ public partial class Troupe : StateManager
         GameObject objet = Instantiate(gameObject);
         objet.transform.position = spawnPos;
     }
+    public override void SetTeam(bool J1)
+    {
+        this.J1 = J1;
+        gameObject.layer = LayerMask.NameToLayer(J1 ? "TroupeP1" : "TroupeP2");
+    }
+
 
 }

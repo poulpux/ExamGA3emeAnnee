@@ -16,7 +16,7 @@ public class Card : MonoBehaviour
     [SerializeField] protected string nameOfCard;
     public int cost;
     protected TYPE type;
-    [SerializeField] protected float damage, pv;
+    [SerializeField] protected int damage, pv;
     public bool J1;
     public Image visuUi;
 
@@ -38,7 +38,7 @@ public class Card : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void SetTeam(bool J1)
+    public virtual void SetTeam(bool J1)
     {
         this.J1 = J1;
         gameObject.layer = LayerMask.NameToLayer(J1 ? "CollisionP2" : "CollisionP1");

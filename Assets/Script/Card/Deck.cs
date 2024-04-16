@@ -22,16 +22,9 @@ public class Deck : GetInput
 
     protected override void Awake()
     {
-        foreach (var item in cards)
-        {
-            print(item);
-        }
         base.Awake();
-
-
         player = GetComponent<PlayerElixir>();
         J1 = config == JNumber.PLAYER1 ? true : false;
-        SetTeam();
         Melange();
 
         isInvoquingEvent.AddListener(() => PlayCard(selectedCard.selectedCard - 1));
@@ -69,9 +62,10 @@ public class Deck : GetInput
         }
     }
 
-    private void SetTeam()
-    {
-        foreach (var item in cards)
-            item.SetTeam(J1);
-    }
+    //private void SetTeam()
+    //{
+    //    print(J1);
+    //    foreach (var item in cards)
+    //        item.SetTeam(J1);
+    //}
 }
