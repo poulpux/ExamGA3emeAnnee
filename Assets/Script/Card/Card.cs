@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum TYPE
+{
+    TROUPE,
+    BATIMENT,
+    SORT
+}
+
 [RequireComponent(typeof(Collider2D))]
 public class Card : MonoBehaviour
-{
-    public enum TYPE
-    {
-        TROUPE,
-        BATIMENT,
-        SORT
-    }
+{ 
 
     [SerializeField] protected string nameOfCard;
     public int cost;

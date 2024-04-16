@@ -8406,8 +8406,8 @@ MonoBehaviour:
   visuUi: {fileID: 0}
   batType: 1
   range: 3
-  bulletPrefab: {fileID: 0}
-  attackSpd: 0
+  bulletPrefab: {fileID: -6406641252663163753, guid: 429adaf4ba9eb2649a6497c994d0cf00, type: 3}
+  attackSpd: 3
 --- !u!1 &2037782821
 GameObject:
   m_ObjectHideFlags: 0

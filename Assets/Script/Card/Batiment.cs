@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+public enum BATIMENTTYPE
+{
+    CARD,
+    LEFT,
+    RIGHT,
+    MIDDLE
+}
+
 [RequireComponent(typeof(SpriteRenderer))]
 public class Batiment : Card
 {
-    protected enum BATIMENTTYPE
-    {
-        CARD,
-        LEFT,
-        RIGHT,
-        MIDDLE
-    }
-
     [SerializeField] BATIMENTTYPE batType;
     private SpriteRenderer spriteRenderer;
     [SerializeField] float range;
     private Card target;
-    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] Sort bulletPrefab;
     [SerializeField] float attackSpd;
     float timerAttack;
     void Start()
@@ -38,15 +38,20 @@ public class Batiment : Card
         if(target == null) 
             DetectEnnemy();
 
-        if (timerAttack > attackSpd / 1f)
+        if (target != null)
+            timerAttack += Time.deltaTime;
+
+        if (timerAttack > 1f / attackSpd)
             Attack();
 
-        //print(target);
     }
 
     private void Attack()
     {
-
+        Sort bullet = Instantiate(bulletPrefab);
+        bullet.transform.position = transform.position;
+        bullet.SetAllValue(target, 10f, damage);
+        timerAttack = 0f;
     }
 
     private void UndetectEnnemy()
