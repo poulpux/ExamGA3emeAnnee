@@ -140,8 +140,6 @@ MonoBehaviour:
   damage: 0
   pv: 0
   troupeInfo: {fileID: 11400000, guid: 40e5f90c0545784448fd719379590cce, type: 2}
-  moveSpd: 3
-  range: 3
   distInterest: 1
 --- !u!50 &-7122688789380916174
 Rigidbody2D:

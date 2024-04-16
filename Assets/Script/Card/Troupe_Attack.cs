@@ -7,20 +7,32 @@ public partial class Troupe
     State attack = new State();
     Card targetAttack;
 
-
+    float timerAttack;
     private void onAttackEnter()
     {
         rb.velocity = Vector3.zero;
-        StartCoroutine(ShootCoroutine());
+        timerAttack = 0f;
     }
     private void onAttackUpdate()
     {
+        if(targetAttack == null)
+        {
+            ChangeState(move);
+            return;
+        }
         StateChangerState();
+
+        timerAttack += Time.deltaTime;
+        if (timerAttack > 1f / attackSpd)
+        {
+            timerAttack = 0f;
+            Shoot();
+        }
+        
     }
 
     private void onAttackExit()
     {
-        targetAttack = null;
     }
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,33 +40,20 @@ public partial class Troupe
     private void StateChangerState()
     {
         if (Vector3.Distance(transform.position, targetAttack.transform.position) > range)
-        {
-            StopCoroutine(ShootCoroutine());
             ChangeState(move);
-        }
-    }
-
-    private IEnumerator ShootCoroutine()
-    {
-        float timer = 0f;
-        while (true)
-        {
-            timer += Time.deltaTime;
-            if (timer > 1f / attackSpd)
-            {
-                timer = 0f;
-                Shoot();
-                yield return null;
-            }
-        }
     }
 
     private void Shoot()
     {
+        //if (targetAttack == null)
+        //{
         print("shoot");
-        Sort bullet = Instantiate(bulletPrefab);
-        Vector3 direction = targetAttack.transform.position - transform.position;
-        bullet.transform.position = transform.position + direction;
-        bullet.SetAllValue(targetAttack, bulletSpd, cardInfo.damage);
+            Sort bullet = Instantiate(bulletPrefab);
+            Vector3 direction = targetAttack.transform.position - transform.position;
+            bullet.transform.position = transform.position + direction;
+            bullet.SetAllValue(targetAttack, bulletSpd, damage);
+        //}
+        //else
+        //    print("pas de target");
     }
 }
