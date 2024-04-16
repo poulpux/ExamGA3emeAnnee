@@ -45,15 +45,16 @@ public partial class Troupe
 
     private void Shoot()
     {
-        //if (targetAttack == null)
-        //{
-        print("shoot");
+        if (attackType == ATTACKTYPE.DISTANCE)
+        {
             Sort bullet = Instantiate(bulletPrefab);
             Vector3 direction = targetAttack.transform.position - transform.position;
             bullet.transform.position = transform.position + direction;
             bullet.SetAllValue(targetAttack, bulletSpd, damage);
-        //}
-        //else
-        //    print("pas de target");
+        }
+        else
+        {
+            targetAttack.TakeDamage(damage);
+        }
     }
 }

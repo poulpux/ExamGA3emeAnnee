@@ -22,6 +22,8 @@ public partial class Troupe : StateManager
         base.Awake();
         InstantiateAll();
         StartCoroutine(SpawnTimer());
+        LoopManager.Instance.LeftTourDestroyEvent.AddListener((J1) => { if (J1 != this.J1) ChangeState(move); });
+        LoopManager.Instance.RightTourDestroyEvent.AddListener((J1) => { if (J1 != this.J1) ChangeState(move); });
     }
 
     protected override void Update()

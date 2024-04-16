@@ -37,7 +37,7 @@ public class WayManager : MonoBehaviour
                 else
                     return rightPont;
             }
-            else if (position.y < 2.25f)
+            else if (position.y < 1.6f)
             {
                 if (position.x > 0f)
                     return J2LeftTour;
@@ -63,7 +63,7 @@ public class WayManager : MonoBehaviour
                 else
                     return rightPont;
             }
-            else if (position.y > - 2.25f)
+            else if (position.y > - 1.6f)
             {
                 if (position.x < 0f)
                     return J1LeftTour;

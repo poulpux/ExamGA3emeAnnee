@@ -12,6 +12,7 @@ public partial class Troupe
     private void onMoveEnter()
     {
        //Set une target
+       targetMove = Vector3.zero;
     }
     private void onMoveUpdate()
     {

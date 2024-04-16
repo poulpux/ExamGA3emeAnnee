@@ -23,7 +23,7 @@ public class Card : MonoBehaviour
     protected TYPE type;
     public int damage, pv;
     protected SpriteRenderer spriteRenderer;
-    private Color startColor;
+    protected Color startColor;
 
     protected virtual void Awake()
     {
