@@ -11,11 +11,9 @@ public enum BATIMENTTYPE
     MIDDLE
 }
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class Batiment : Card
 {
     [SerializeField] private ScriptableObjectBatiment batInfo;
-    private SpriteRenderer spriteRenderer;
     private Card target;
     float timerAttack;
     private bool activate = true;

@@ -10,6 +10,7 @@ public enum TYPE
     SORT
 }
 
+[RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Collider2D))]
 public class Card : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Card : MonoBehaviour
     protected int cost;
     protected TYPE type;
     public int damage, pv;
+    protected SpriteRenderer spriteRenderer;
+    private Color startColor;
 
     protected virtual void Awake()
     {
@@ -34,8 +37,11 @@ public class Card : MonoBehaviour
     public void TakeDamage(int nbDamage)
     {
         pv -= nbDamage;
+        spriteRenderer.color = CalculateColor(((float)pv / (float)cardInfo.pv));
+        print((float)(pv / cardInfo.pv));
         if (pv < 0)
             GetDestroy();
+
     }
 
     protected virtual void GetDestroy()
@@ -56,5 +62,20 @@ public class Card : MonoBehaviour
         type = cardInfo.type;
         damage = cardInfo.damage;
         pv = cardInfo.pv;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        startColor = spriteRenderer.color;
+    }
+
+    private Color CalculateColor(float lifePourcentage01)
+    { 
+        float maxLight = startColor.r > startColor.g &&  startColor.r > startColor.b ? startColor.r : startColor.g > startColor.b ? startColor.g : startColor.b;
+        //print(maxLight + " " + lifePourcentage01);
+        return new Color(Calculator(startColor.r, maxLight, lifePourcentage01), Calculator(startColor.g, maxLight, lifePourcentage01), Calculator(startColor.b, maxLight, lifePourcentage01));
+    }
+
+    private float Calculator(float startValue, float maxValue, float pourcentage01)
+    {
+        return (startValue + (maxValue - startValue) * (1 -pourcentage01));
     }
 }
