@@ -49,15 +49,21 @@ public partial class Troupe : StateManager
 
         rb = GetComponent<Rigidbody2D>();
     }
-    public override void Invoque(Vector3 spawnPos)
+    public override void Invoque(Vector3 spawnPos, bool J1)
     {
         GameObject objet = Instantiate(gameObject);
         objet.transform.position = spawnPos;
+        objet.GetComponent<Card>().SetTeam(J1);
     }
     public override void SetTeam(bool J1)
     {
         this.J1 = J1;
         gameObject.layer = LayerMask.NameToLayer(J1 ? "TroupeP1" : "TroupeP2");
+        GameObject sprite = Instantiate(knob.gameObject, transform.position, transform.rotation);
+        sprite.GetComponent<SpriteRenderer>().color = J1 ? Color.cyan : Color.red;
+
+        // Changer le parent de l'objet instancié
+        sprite.transform.SetParent(transform);
     }
 
     private IEnumerator SpawnTimer()

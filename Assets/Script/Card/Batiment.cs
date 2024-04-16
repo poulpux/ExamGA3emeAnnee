@@ -132,4 +132,11 @@ public class Batiment : Card
         attackSpd = batInfo.attackSpd;
         bulletSpd = batInfo.bulletSpd;  
     }
+    public override void Invoque(Vector3 spawnPos, bool J1)
+    {
+        GameObject objet = Instantiate(gameObject);
+        objet.transform.position = spawnPos;
+        objet.GetComponent<Card>().SetTeam(J1);
+    }
+
 }
