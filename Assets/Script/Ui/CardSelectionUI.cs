@@ -13,7 +13,7 @@ public class CardSelectionUI : GetInput
     void Start()
     {
         deck.playACardEvent.AddListener(() => CheckVisu());
-        isSwitchLeftEvent.AddListener(() => { selectedCard = selectedCard -1 < 1 ? 3 : selectedCard - 1; SetCadre();});
+        isSwitchLeftEvent.AddListener(() => { selectedCard = selectedCard - 1 < 1 ? 3 : selectedCard - 1; SetCadre(); });
         isSwitchRightEvent.AddListener(() => { selectedCard = selectedCard + 1 > 3 ? 1 : selectedCard + 1; SetCadre(); });
         CheckVisu();
         SetCadre();

@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: visuUi
       value: 
       objectReference: {fileID: 42993898275887874, guid: 06b56d58e2b8ad04797924cae0c44e23, type: 3}
+    - target: {fileID: 1696652127232555472, guid: 7d4052c61a5da264e9dbd4c838e0a93a, type: 3}
+      propertyPath: visuUi
+      value: 
+      objectReference: {fileID: 42993898275887874, guid: 06b56d58e2b8ad04797924cae0c44e23, type: 3}
     - target: {fileID: 3267982855974121525, guid: 7d4052c61a5da264e9dbd4c838e0a93a, type: 3}
       propertyPath: m_Name
       value: Peon (4) Variant

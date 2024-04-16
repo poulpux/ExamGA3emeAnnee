@@ -4968,12 +4968,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: 1
   cards:
-  - {fileID: 760031939753689488, guid: 1f8b8bfcfb5f3ee4999701b380b0f63a, type: 3}
-  - {fileID: 143587065725019460, guid: 2907c2f1cff206241835ba044a747b99, type: 3}
-  - {fileID: 3242149387255856683, guid: dfcc8592be1acaf45aa5027458f08e3d, type: 3}
-  - {fileID: 1601556963372697432, guid: 7d4052c61a5da264e9dbd4c838e0a93a, type: 3}
-  - {fileID: 4900683108647862976, guid: f01ded7d1e1793d45856e27d518edd24, type: 3}
-  - {fileID: 5624686750842697162, guid: a9da9e3456b79b443ac151d5f4271fa0, type: 3}
+  - {fileID: 810166938675265304, guid: 1f8b8bfcfb5f3ee4999701b380b0f63a, type: 3}
+  - {fileID: 21524179624401868, guid: 2907c2f1cff206241835ba044a747b99, type: 3}
+  - {fileID: 3263995086481637539, guid: dfcc8592be1acaf45aa5027458f08e3d, type: 3}
+  - {fileID: 1696652127232555472, guid: 7d4052c61a5da264e9dbd4c838e0a93a, type: 3}
+  - {fileID: 5021758633639148616, guid: f01ded7d1e1793d45856e27d518edd24, type: 3}
+  - {fileID: 4101774591121855885, guid: b7b5d778f0a1f804ead32bec560c36f9, type: 3}
   currentCards: []
   backCard: []
   nextCard: {fileID: 0}
@@ -5393,12 +5393,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: 0
   cards:
-  - {fileID: 760031939753689488, guid: 1f8b8bfcfb5f3ee4999701b380b0f63a, type: 3}
-  - {fileID: 143587065725019460, guid: 2907c2f1cff206241835ba044a747b99, type: 3}
-  - {fileID: 3242149387255856683, guid: dfcc8592be1acaf45aa5027458f08e3d, type: 3}
-  - {fileID: 1601556963372697432, guid: 7d4052c61a5da264e9dbd4c838e0a93a, type: 3}
-  - {fileID: 4900683108647862976, guid: f01ded7d1e1793d45856e27d518edd24, type: 3}
-  - {fileID: 5624686750842697162, guid: a9da9e3456b79b443ac151d5f4271fa0, type: 3}
+  - {fileID: 810166938675265304, guid: 1f8b8bfcfb5f3ee4999701b380b0f63a, type: 3}
+  - {fileID: 21524179624401868, guid: 2907c2f1cff206241835ba044a747b99, type: 3}
+  - {fileID: 3263995086481637539, guid: dfcc8592be1acaf45aa5027458f08e3d, type: 3}
+  - {fileID: 1696652127232555472, guid: 7d4052c61a5da264e9dbd4c838e0a93a, type: 3}
+  - {fileID: 5021758633639148616, guid: f01ded7d1e1793d45856e27d518edd24, type: 3}
+  - {fileID: 4101774591121855885, guid: b7b5d778f0a1f804ead32bec560c36f9, type: 3}
   currentCards: []
   backCard: []
   nextCard: {fileID: 0}

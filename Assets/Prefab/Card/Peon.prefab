@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1331727848395855978}
   - component: {fileID: 5962008933396369917}
   - component: {fileID: 2666134377577442773}
-  - component: {fileID: 760031939753689488}
+  - component: {fileID: 810166938675265304}
   m_Layer: 7
   m_Name: Peon
   m_TagString: Untagged
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &760031939753689488
+--- !u!114 &810166938675265304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,14 +130,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3598313983452198653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a13c79e4f5a60f44db4f546d9c03e2d7, type: 3}
+  m_Script: {fileID: 11500000, guid: fd8d97f320eda354c8ffd28e6be22a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nameOfCard: Peon
   cost: 3
-  damage: 20
-  pv: 0
+  damage: 10
+  pv: 30
   J1: 1
   visuUi: {fileID: 1063759338989976392, guid: ce8464ac595d4da48bf5791c7aa30094, type: 3}
   moveSpd: 3
-  range: 1
+  range: 3

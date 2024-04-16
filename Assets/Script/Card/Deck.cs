@@ -22,14 +22,19 @@ public class Deck : GetInput
 
     protected override void Awake()
     {
-        base.Awake();   
+        foreach (var item in cards)
+        {
+            print(item);
+        }
+        base.Awake();
+
 
         player = GetComponent<PlayerElixir>();
         J1 = config == JNumber.PLAYER1 ? true : false;
         SetTeam();
         Melange();
 
-        isInvoquingEvent.AddListener(() => PlayCard(selectedCard.selectedCard-1));
+        isInvoquingEvent.AddListener(() => PlayCard(selectedCard.selectedCard - 1));
     }
 
     private void Melange()

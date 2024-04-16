@@ -21,14 +21,14 @@ public class Batiment : Card
         spriteRenderer = GetComponent<SpriteRenderer>();    
     }
 
-    //void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.P) && batType == BATIMENTTYPE.MIDDLE && !J1)
-    //    {
-    //        TakeDamage(40000);
-    //    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P) && batType == BATIMENTTYPE.LEFT)
+        {
+            TakeDamage(40000);
+        }
 
-    //}
+    }
 
     protected override void GetDestroy()
     {
