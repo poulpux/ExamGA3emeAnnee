@@ -24,14 +24,14 @@ public class Card : MonoBehaviour
     public int damage, pv;
     protected SpriteRenderer spriteRenderer;
     protected Color startColor;
-
+    [SerializeField] protected SpriteRenderer knob;
     protected virtual void Awake()
     {
         InstantiateAll();
     }
 
 
-    public virtual void Invoque(Vector3 spawnPos)
+    public virtual void Invoque(Vector3 spawnPos, bool J1)
     {
 
     }
@@ -53,6 +53,8 @@ public class Card : MonoBehaviour
     {
         this.J1 = J1;
         gameObject.layer = LayerMask.NameToLayer(J1 ? "CollisionP2" : "CollisionP1");
+        GameObject sprite = Instantiate(knob.gameObject, transform.position, transform.rotation, null);
+        sprite.GetComponent<SpriteRenderer>().color = J1 ? Color.cyan : Color.red;
     }
 
     private void InstantiateAll()

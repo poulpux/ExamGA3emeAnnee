@@ -139,6 +139,7 @@ MonoBehaviour:
   visuUi: {fileID: 1063759338989976392, guid: ce8464ac595d4da48bf5791c7aa30094, type: 3}
   damage: 0
   pv: 0
+  knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
   troupeInfo: {fileID: 11400000, guid: 40e5f90c0545784448fd719379590cce, type: 2}
   distInterest: 1
 --- !u!50 &-7122688789380916174

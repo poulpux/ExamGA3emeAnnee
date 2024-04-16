@@ -3,7 +3,11 @@ guid: fd8d97f320eda354c8ffd28e6be22a17
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cardInfo: {instanceID: 0}
+  - visuUi: {instanceID: 0}
+  - knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
+  - troupeInfo: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
