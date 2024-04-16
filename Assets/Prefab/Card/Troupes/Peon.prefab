@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2666134377577442773}
   - component: {fileID: 810166938675265304}
   - component: {fileID: -7122688789380916174}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Peon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardInfo: {fileID: 11400000, guid: 48067116976f0c34bab3e9101a08466d, type: 2}
-  J1: 0
+  J1: 1
   visuUi: {fileID: 1063759338989976392, guid: ce8464ac595d4da48bf5791c7aa30094, type: 3}
   damage: 0
   pv: 0

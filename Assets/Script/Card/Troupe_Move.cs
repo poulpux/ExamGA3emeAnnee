@@ -21,8 +21,6 @@ public partial class Troupe
             targetMove = Vector3.zero;
         }
 
-        print(Vector3.Distance(transform.position, targetMove));
-
         if (interestTarget == null ) 
             DetectInterrest();
 
