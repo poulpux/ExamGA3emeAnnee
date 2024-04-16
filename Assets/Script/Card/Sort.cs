@@ -24,10 +24,8 @@ public class Sort : Card
         transform.position += this.direction * Time.deltaTime * spd ;
 
         if (target == null)
-        {
             Destroy(gameObject);
-            print("pas de target");
-        }
+
         DeleteBullet();
         TouchTarget();
 

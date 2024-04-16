@@ -30,7 +30,7 @@ public class Batiment : Card
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (batType == BATIMENTTYPE.MIDDLE)
         {
-            startColor = new Color(1f, 0f, 0f);
+            startColor = !J1 ? new Color(1f, 0f, 0f) : new Color(0f, 1f, 1f);
             activate = false;
         }
 
