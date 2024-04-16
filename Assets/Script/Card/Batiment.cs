@@ -21,7 +21,7 @@ public class Batiment : Card
     private float range;
     private BATIMENTTYPE batType;
     private Sort bulletPrefab;
-    private float attackSpd;
+    private float attackSpd, bulletSpd;
 
     protected override void Awake()
     {
@@ -71,7 +71,7 @@ public class Batiment : Card
     {
         Sort bullet = Instantiate(bulletPrefab);
         bullet.transform.position = transform.position;
-        bullet.SetAllValue(target, 10f, cardInfo.damage);
+        bullet.SetAllValue(target, bulletSpd, cardInfo.damage);
         timerAttack = 0f;
     }
 
@@ -121,5 +121,6 @@ public class Batiment : Card
         batType = batInfo.batType;
         bulletPrefab = batInfo.bulletPrefab;
         attackSpd = batInfo.attackSpd;
+        bulletSpd = batInfo.bulletSpd;  
     }
 }

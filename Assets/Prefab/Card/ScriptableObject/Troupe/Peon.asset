@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpd: 3
   range: 1
+  attackSpd: 2
+  bulletSpd: 0
+  attackType: 0
+  bulletPrefab: {fileID: -6406641252663163753, guid: 429adaf4ba9eb2649a6497c994d0cf00, type: 3}

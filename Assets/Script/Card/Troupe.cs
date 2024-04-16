@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ATTACKTYPE
+{
+    DISTANCE,
+    CAC
+}
+
 [RequireComponent(typeof(Rigidbody2D))]
 public partial class Troupe : StateManager
 {
     [SerializeField] private ScriptableObjectTroupe troupeInfo;
-    [SerializeField] protected float moveSpd, range;
+    protected float moveSpd, range, attackSpd, bulletSpd;
+    ATTACKTYPE attackType;
     private bool active;
+    private Sort bulletPrefab;
 
     protected override void Awake()
     {
@@ -32,6 +40,9 @@ public partial class Troupe : StateManager
 
         moveSpd = troupeInfo.moveSpd;
         range = troupeInfo.range;
+        attackType = troupeInfo.attackType;
+        attackSpd = troupeInfo.attackSpd;
+        bulletPrefab = troupeInfo.bulletPrefab;
 
         rb = GetComponent<Rigidbody2D>();
     }
