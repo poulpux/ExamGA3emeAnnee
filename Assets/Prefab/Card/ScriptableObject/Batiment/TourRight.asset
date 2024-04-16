@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a195f05cf788ca4784171222cf1713c, type: 3}
   m_Name: TourRight
   m_EditorClassIdentifier: 
-  range: 3
+  range: 2.1
   batType: 2
   bulletPrefab: {fileID: -6406641252663163753, guid: 429adaf4ba9eb2649a6497c994d0cf00, type: 3}
-  attackSpd: 3
+  attackSpd: 1.5
