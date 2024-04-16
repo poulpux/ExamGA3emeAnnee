@@ -16,20 +16,22 @@ public class ElixirSpawner : MonoBehaviour
     void Update()
     {
         timerXp += Time.deltaTime;
-        if(timerXp > Cldwn)
-        {
+        if(timerXp > Cldwn && InstantiateXP())
             timerXp = 0f;
-            InstantiateXP();
-        }
     }
 
-    private void InstantiateXP()
+    private bool InstantiateXP()
     {
         Vector2 randomPos = TeleportInBox(spawnPos.transform.position, spawnPos.size);
+        if (randomPos == Vector2.one * 100f)
+            return false;
+
         GameObject xp1 = Instantiate(prefabElixir);
         xp1.transform.position = randomPos;
         GameObject xp2 = Instantiate(prefabElixir);
         xp2.transform.position = randomPos * new Vector2(1f,-1f);
+
+        return true;
     }
 
     public Vector2 TeleportInBox(Vector2 pos, Vector2 size, int counter = 0)
@@ -38,16 +40,16 @@ public class ElixirSpawner : MonoBehaviour
 
         if (!CheckCollision(teleportPosition))
             return teleportPosition;
-        else if (counter <= 5f)
+        else if (counter <= 10f)
             TeleportInBox(pos, size, counter++);
         else
             Debug.Log("could not found a position, try hit later");
-        return Vector2.zero;
+        return Vector2.one * 100f;
     }
 
     private bool CheckCollision(Vector3 position)
     {
-        Collider[] colliders = Physics.OverlapSphere(position, 0.2f/*, (1<< LayerMask.NameToLayer("Default"))*/);
-        return colliders.Length > 0;
+        Collider2D colliders = Physics2D.OverlapCircle(position, 0.2f, (1 << LayerMask.NameToLayer("Default")));
+        return colliders != null;
     }
 }

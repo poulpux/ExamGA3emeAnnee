@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a195f05cf788ca4784171222cf1713c, type: 3}
+  m_Name: TourLeft
+  m_EditorClassIdentifier: 
+  range: 2.1
+  batType: 1
+  bulletPrefab: {fileID: -6406641252663163753, guid: 429adaf4ba9eb2649a6497c994d0cf00, type: 3}
+  attackSpd: 1.5
+  bulletSpd: 10
