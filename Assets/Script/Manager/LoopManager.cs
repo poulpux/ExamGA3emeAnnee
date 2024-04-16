@@ -15,11 +15,13 @@ public class LoopManager : MonoBehaviour
     [HideInInspector] public UnityEvent<bool> RightTourDestroyEvent = new UnityEvent<bool> ();
     [HideInInspector] public UnityEvent<bool> MiddleTourDestroyEvent = new UnityEvent<bool> ();
 
+    [HideInInspector] public UnityEvent SpeedUpEvent = new UnityEvent();
+
     [SerializeField] BoxCollider2D J1Left, J1Right, J2Left, J2Right;
     [SerializeField] GameObject WinScreenObj;
-    [SerializeField] TextMeshProUGUI textWinner;
+    [SerializeField] TextMeshProUGUI textWinner, timerText;
 
-    float timerLeave;
+    float timerLeave, timerGame = 180f;
     int nbTap;
     private void Awake()
     {
@@ -33,13 +35,28 @@ public class LoopManager : MonoBehaviour
         MiddleTourDestroyEvent.AddListener((J1) => StartCoroutine(EndGame(J1)));
 
         StartCoroutine(StartGame());
+        StartCoroutine(SpeedUp());
     }
 
     private void Update()
     {
-        //Play a security to leave
+        TimerGameGestion();
+        LeaveSecurity();
+    }
+
+    private void TimerGameGestion()
+    {
+        timerGame -= Time.deltaTime;
+        int minutes = (int)timerGame / 60;
+        int seconde = (int)timerGame - minutes * 60;
+        timerText.text = "";
+        timerText.text = minutes.ToString() +" : "+seconde.ToString();
+    }
+
+    private void LeaveSecurity()
+    {
         timerLeave += Time.deltaTime;
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             timerLeave = 0f;
             nbTap++;
@@ -85,6 +102,14 @@ public class LoopManager : MonoBehaviour
         Time.fixedDeltaTime = Time.timeScale * 0.01f;
         WinScreenObj.SetActive(false );
         yield break;
+    }
+
+    private IEnumerator SpeedUp()
+    {
+        yield return new WaitForSeconds(120f);
+        SpeedUpEvent.Invoke();
+        yield break;
+
     }
 
 }

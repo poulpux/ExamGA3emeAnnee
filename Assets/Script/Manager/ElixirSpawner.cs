@@ -6,17 +6,18 @@ public class ElixirSpawner : MonoBehaviour
 {
     [SerializeField] BoxCollider2D spawnPos;
     [SerializeField] private GameObject prefabElixir;
-    [SerializeField] float Cldwn, random;
-    float timerXp;
+    [SerializeField] float CldwnNormal, CldwnFast, random;
+    float timerXp, currentCldwn;
     void Start()
     {
-        
+        LoopManager.Instance.SpeedUpEvent.AddListener(()=> currentCldwn = CldwnFast);
+        currentCldwn = CldwnNormal;
     }
 
     void Update()
     {
         timerXp += Time.deltaTime;
-        if(timerXp > Cldwn && InstantiateXP())
+        if(timerXp > currentCldwn && InstantiateXP())
             timerXp = 0f;
     }
 
