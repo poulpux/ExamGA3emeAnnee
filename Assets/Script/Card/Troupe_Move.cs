@@ -21,10 +21,12 @@ public partial class Troupe
             targetMove = Vector3.zero;
         }
 
-        if (interestTarget == null)
+        print(Vector3.Distance(transform.position, targetMove));
+
+        if (interestTarget == null ) 
             DetectInterrest();
 
-        if(interestTarget ==  null)
+        if(targetMove ==  Vector3.zero || Vector3.Distance(transform.position, targetMove) < 1f)
             SetTargetMove();
 
         MoveToTarget();
@@ -34,13 +36,14 @@ public partial class Troupe
 
     private void onMoveExit()
     {
+
     }
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     private void SetTargetMove()
     {
-
+        targetMove = WayManager.Instance.SetTargetMove(transform.position, J1).position;
     }
 
     private void DetectInterrest()
@@ -83,7 +86,7 @@ public partial class Troupe
     {
         if (targetMove != Vector3.zero)
         {
-            Vector3 direction = Vector3.ClampMagnitude(targetMove - transform.position, 1f);
+            Vector3 direction = Vector3.ClampMagnitude((targetMove - transform.position)*1000f, 1f);
             rb.velocity = direction * moveSpd;
         }
         else

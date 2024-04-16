@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 21524179624401868, guid: 2907c2f1cff206241835ba044a747b99, type: 3}
       propertyPath: J1
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21524179624401868, guid: 2907c2f1cff206241835ba044a747b99, type: 3}
       propertyPath: visuUi
@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4223801584165065257, guid: 2907c2f1cff206241835ba044a747b99, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6471528766934021417, guid: 2907c2f1cff206241835ba044a747b99, type: 3}
       propertyPath: m_Color.b
