@@ -16,7 +16,7 @@ public partial class Troupe
     }
     private void onMoveUpdate()
     {
-        if (interestTarget != null && Vector3.Distance(transform.position, interestTarget.transform.position) > distInterest)
+        if (interestTarget != null && Vector3.Distance(transform.position, interestTarget.transform.position) > distInterest * 1.2f)
         {
             interestTarget = null;
             targetMove = Vector3.zero;
@@ -25,7 +25,7 @@ public partial class Troupe
         if (interestTarget == null ) 
             DetectInterrest();
 
-        if(targetMove ==  Vector3.zero || Vector3.Distance(transform.position, targetMove) < 1f)
+        if(targetMove == Vector3.zero || Vector3.Distance(transform.position, targetMove) < 1f)
             SetTargetMove();
 
         MoveToTarget();
@@ -95,7 +95,7 @@ public partial class Troupe
     {
         if (targetMove != Vector3.zero)
         {
-            Vector3 direction = Vector3.ClampMagnitude((targetMove - transform.position)*1000f, 1f);
+            Vector3 direction = Vector3.ClampMagnitude((targetMove - transform.position)*10000f, 1f);
             rb.velocity = direction * moveSpd;
         }
         else

@@ -917,7 +917,7 @@ Transform:
   m_GameObject: {fileID: 132047917}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8, y: -1.69, z: 0}
+  m_LocalPosition: {x: -2, y: -1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1636,7 +1636,7 @@ Transform:
   m_GameObject: {fileID: 395977551}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8, y: 1.69, z: 0}
+  m_LocalPosition: {x: -2, y: 1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5471,7 +5471,7 @@ Transform:
   m_GameObject: {fileID: 1146626477}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8, y: 1.69, z: 0}
+  m_LocalPosition: {x: 2, y: 1.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6032,11 +6032,11 @@ MonoBehaviour:
   config: 1
   cards:
   - {fileID: 810166938675265304, guid: 1f8b8bfcfb5f3ee4999701b380b0f63a, type: 3}
-  - {fileID: 21524179624401868, guid: 2907c2f1cff206241835ba044a747b99, type: 3}
   - {fileID: 2230705923025693030, guid: b64b89ff46e33bb438f720fdde3cf3c6, type: 3}
   - {fileID: 7641398190474128875, guid: 8a7cc88fa53ce4b4e8d183a5dc7bfbc5, type: 3}
   - {fileID: 2459000343644963097, guid: 7b73b767beaad7445bf43c15275a316c, type: 3}
   - {fileID: 4347915866408132703, guid: 356e84d456dafeb4bbd5844c7fb44d85, type: 3}
+  - {fileID: 8850042110899916309, guid: 34ea4b4dd0c2d47428646fd261795ba9, type: 3}
   currentCards: []
   backCard: []
   nextCard: {fileID: 0}
@@ -6179,7 +6179,7 @@ Transform:
   m_GameObject: {fileID: 1332280648}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8, y: -1.69, z: 0}
+  m_LocalPosition: {x: 2, y: -1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6624,11 +6624,11 @@ MonoBehaviour:
   config: 0
   cards:
   - {fileID: 810166938675265304, guid: 1f8b8bfcfb5f3ee4999701b380b0f63a, type: 3}
-  - {fileID: 21524179624401868, guid: 2907c2f1cff206241835ba044a747b99, type: 3}
   - {fileID: 2230705923025693030, guid: b64b89ff46e33bb438f720fdde3cf3c6, type: 3}
   - {fileID: 7641398190474128875, guid: 8a7cc88fa53ce4b4e8d183a5dc7bfbc5, type: 3}
   - {fileID: 2459000343644963097, guid: 7b73b767beaad7445bf43c15275a316c, type: 3}
   - {fileID: 4347915866408132703, guid: 356e84d456dafeb4bbd5844c7fb44d85, type: 3}
+  - {fileID: 8850042110899916309, guid: 34ea4b4dd0c2d47428646fd261795ba9, type: 3}
   currentCards: []
   backCard: []
   nextCard: {fileID: 0}
@@ -10644,11 +10644,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3989847340388080697, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.63
       objectReference: {fileID: 0}
     - target: {fileID: 3989847340388080697, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.47
       objectReference: {fileID: 0}
     - target: {fileID: 3989847340388080697, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10688,7 +10688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8234642473466168227, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
