@@ -16,7 +16,7 @@ public partial class Troupe
     }
     private void onMoveUpdate()
     {
-        if (interestTarget != null && Vector3.Distance(transform.position, interestTarget.transform.position) > distInterest * 1.2f)
+        if (interestTarget != null && Vector3.Distance(transform.position, interestTarget.transform.position) > distInterest)
         {
             interestTarget = null;
             targetMove = Vector3.zero;
@@ -25,7 +25,7 @@ public partial class Troupe
         if (interestTarget == null ) 
             DetectInterrest();
 
-        if(targetMove == Vector3.zero || Vector3.Distance(transform.position, targetMove) < 1f)
+        if (targetMove == Vector3.zero || Vector3.Distance(transform.position, targetMove) < 1f )
             SetTargetMove();
 
         MoveToTarget();
@@ -54,11 +54,19 @@ public partial class Troupe
             if (targetCard != null && targetCard.cardInfo.type != TYPE.SORT)
             {
                 Vector2 direction = new Vector2(item.transform.position.x, item.transform.position.y) - new Vector2(transform.position.x, transform.position.y);
-                if (!Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), direction, distInterest, (1 << LayerMask.NameToLayer("Default")))
-                    || Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), direction, distInterest, (1 << LayerMask.NameToLayer("Default"))).distance > Vector3.Distance(item.transform.position, transform.position))
+                if (attackType == ATTACKTYPE.DISTANCE)
                 {
                     interestTarget = targetCard;
                     targetMove = item.transform.position;
+                }
+                else if (targetCard)
+                {
+                    if (!Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), direction, distInterest, (1 << LayerMask.NameToLayer("Default")))
+                        || Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), direction, distInterest, (1 << LayerMask.NameToLayer("Default"))).distance > Vector3.Distance(item.transform.position, transform.position))
+                    {
+                        interestTarget = targetCard;
+                        targetMove = item.transform.position;
+                    }
                 }
             }
         }

@@ -30,7 +30,7 @@ public class PlayerElixir : MonoBehaviour
         return false;
     }
 
-    private bool TakeElixir()
+    public bool TakeElixir()
     {
         if(currentElixir < 10f)
         {

@@ -8,5 +8,5 @@ public class ScriptableObjectBatiment : ScriptableObject
     public float range;
     public BATIMENTTYPE batType;
     public Sort bulletPrefab;
-    public float attackSpd, bulletSpd;
+    public float attackSpd, bulletSpd, timeAlife;
 }

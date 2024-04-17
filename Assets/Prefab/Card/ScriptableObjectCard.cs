@@ -10,5 +10,5 @@ public class ScriptableObjectCard : ScriptableObject
     public int cost;
     public TYPE type;
     public int damage, pv;
-    public Image visuUi;
+    //public Image visuUi;
 }
