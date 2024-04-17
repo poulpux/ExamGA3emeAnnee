@@ -21,7 +21,7 @@ public class Sort : Card
 
     void Update()
     {
-        transform.position += this.direction * Time.deltaTime * spd ;
+        transform.position += direction * Time.deltaTime * spd ;
 
         if (target == null)
             Destroy(gameObject);
@@ -47,6 +47,7 @@ public class Sort : Card
                 Card target = item.GetComponent<Card>();
                 if (target != null && target.cardInfo.type != TYPE.SORT)
                 {
+                    print("makeDamage "+damage);
                     target.TakeDamage(damage);
                     explose = true;
                 }

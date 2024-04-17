@@ -16,5 +16,5 @@ MonoBehaviour:
   attackSpd: 1
   bulletSpd: 7
   attackType: 0
-  bulletPrefab: {fileID: 1165698918848150617, guid: 91bb10081d928ef409d1b9ef9a4b33de, type: 3}
+  bulletPrefab: {fileID: 7058094499171076490, guid: d655e68a96fa24b4ca7f32aa5e830b53, type: 3}
   speedType: 1
