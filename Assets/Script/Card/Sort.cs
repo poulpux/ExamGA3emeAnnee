@@ -21,7 +21,7 @@ public class Sort : Card
 
     void Update()
     {
-        transform.position += this.direction * Time.deltaTime * spd ;
+        transform.position += direction * Time.deltaTime * spd ;
 
         if (target == null)
             Destroy(gameObject);
@@ -33,10 +33,27 @@ public class Sort : Card
 
     private void TouchTarget()
     {
-        if (target != null && Vector3.Distance(transform.position, target.transform.position)< transform.localScale.x * 0.5f)
-        {
+        if (target != null && !zone && Vector3.Distance(transform.position, target.transform.position)< transform.localScale.x * 0.5f)
+        {          
             target.TakeDamage(damage);
             Destroy(gameObject);
+        }
+        else if(target != null && zone)
+        {
+            bool explose = false;
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, transform.localScale.x * 0.5f, !J1 ? (1 << LayerMask.NameToLayer("TroupeP1")) : (1 << LayerMask.NameToLayer("TroupeP2")));
+            foreach (var item in colliders)
+            {
+                Card target = item.GetComponent<Card>();
+                if (target != null && target.cardInfo.type != TYPE.SORT)
+                {
+                    print("makeDamage "+damage);
+                    target.TakeDamage(damage);
+                    explose = true;
+                }
+            }
+            if(explose)
+                Destroy(gameObject);
         }
     }
 
@@ -48,29 +65,25 @@ public class Sort : Card
             Destroy(gameObject);
     }
 
-    public void SetAllValue(Card target, float spd, int damage, bool zone = false)
+    public void SetAllValue(Card target, float spd, int damage,bool J1, bool zone = false)
     {
         this.target = target;
         this.spd = spd;
         this.zone = zone;
         this.damage = damage;
 
-        Vector3 localDir = target.transform.position - transform.position;
-        direction =Vector3.Distance( target.transform.position, transform.position) >=1f ? Vector3.ClampMagnitude( localDir, 1f) : Vector3.ClampMagnitude(localDir * 1000f, 1f);
+        Vector3 localDir = Vector3.one;
+        if (target != null)
+        {
+            localDir = target.transform.position - transform.position;
+            direction = Vector3.Distance(target.transform.position, transform.position) >= 1f ? Vector3.ClampMagnitude(localDir, 1f) : Vector3.ClampMagnitude(localDir * 1000f, 1f);
         finalPos = target.transform.position;
+        }
+        this.J1 = J1;
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject == target.gameObject)
-    //    {
-           
-    //    }
-    //}
 
     private void InstantiateAll()
     {
         zone = sortInfo.zone;
-        spd = sortInfo.spd;
     }
 }

@@ -15,6 +15,7 @@ public partial class Troupe
     }
     private void onAttackUpdate()
     {
+
         if(targetAttack == null)
         {
             ChangeState(move);
@@ -48,13 +49,13 @@ public partial class Troupe
         if (attackType == ATTACKTYPE.DISTANCE)
         {
             Sort bullet = Instantiate(bulletPrefab);
-            Vector3 direction = targetAttack.transform.position - transform.position;
-            bullet.transform.position = transform.position + direction;
-            bullet.SetAllValue(targetAttack, bulletSpd, damage);
+            bullet.transform.position = transform.position;
+            bullet.SetAllValue(targetAttack, bulletSpd, damage, J1);
         }
         else
         {
             targetAttack.TakeDamage(damage);
         }
+        rb.velocity = Vector3.zero;
     }
 }

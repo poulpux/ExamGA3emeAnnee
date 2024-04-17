@@ -23,7 +23,7 @@ public class WayManager : MonoBehaviour
     {
         if(J1)
         {
-            if (position.y < -2.25f)
+            if (position.y < -2)
             {
                 if (position.x < 0f)
                     return J1LeftTour;
@@ -37,7 +37,7 @@ public class WayManager : MonoBehaviour
                 else
                     return rightPont;
             }
-            else if (position.y < 1.6f)
+            else if (position.y < 1.4f)
             {
                 if (position.x > 0f)
                     return J2LeftTour;
@@ -49,7 +49,7 @@ public class WayManager : MonoBehaviour
         }
         else
         {
-            if (position.y > 2.25f)
+            if (position.y > 2f)
             {
                 if (position.x > 0f)
                     return J2LeftTour;
@@ -63,7 +63,7 @@ public class WayManager : MonoBehaviour
                 else
                     return rightPont;
             }
-            else if (position.y > - 1.6f)
+            else if (position.y > - 1.4f)
             {
                 if (position.x < 0f)
                     return J1LeftTour;

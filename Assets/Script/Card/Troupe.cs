@@ -16,15 +16,26 @@ public partial class Troupe : StateManager
     ATTACKTYPE attackType;
     private bool active;
     private Sort bulletPrefab;
+    [SerializeField] bool plusieurs;
 
     protected override void Awake()
     {
         base.Awake();
+
+        if (plusieurs)
+            return;
         InstantiateAll();
         StartCoroutine(SpawnTimer());
         LoopManager.Instance.LeftTourDestroyEvent.AddListener((J1) => { if (J1 != this.J1) ChangeState(move); });
         LoopManager.Instance.RightTourDestroyEvent.AddListener((J1) => { if (J1 != this.J1) ChangeState(move); });
         rb.freezeRotation = true;
+        rb.excludeLayers = ((1 << LayerMask.NameToLayer("CollisionP1") | (1 << LayerMask.NameToLayer("CollisionP2"))));
+        distInterest = /*range + 0.5f*/0f;
+    }
+
+    private void Start()
+    {
+        
     }
 
     protected override void Update()
@@ -41,10 +52,11 @@ public partial class Troupe : StateManager
         attack.InitState(onAttackEnter, onAttackUpdate,onAttackExit);
         ForcedCurrentState(spawn);
 
-        moveSpd = troupeInfo.moveSpd;
+        moveSpd = SetSpeed();
         range = troupeInfo.range;
         attackType = troupeInfo.attackType;
         attackSpd = troupeInfo.attackSpd;
+        bulletSpd = troupeInfo.bulletSpd;
         bulletPrefab = troupeInfo.bulletPrefab;
 
         rb = GetComponent<Rigidbody2D>();
@@ -64,6 +76,17 @@ public partial class Troupe : StateManager
 
         // Changer le parent de l'objet instancié
         sprite.transform.SetParent(transform);
+
+        if (plusieurs)
+            Plusieurs();
+    }
+
+    private void Plusieurs()
+    {
+            foreach (Transform child in transform)
+                child.GetComponent<Troupe>()?.SetTeam(J1);
+            transform.DetachChildren();
+        Destroy(gameObject);
     }
 
     private IEnumerator SpawnTimer()
@@ -73,4 +96,20 @@ public partial class Troupe : StateManager
         yield break;
     }
 
+    private float SetSpeed()
+    {
+        if (troupeInfo.speedType == SPEED.ULTRALOW)
+            return 0.28f;
+        else if (troupeInfo.speedType == SPEED.LOW)
+            return 0.42f;
+        else if (troupeInfo.speedType == SPEED.MIDDLE)
+            return 0.56f;
+        else if (troupeInfo.speedType == SPEED.FAST)
+            return 0.7f;
+        else if (troupeInfo.speedType == SPEED.ULTRAFAST)
+            return 0.84f;
+
+        Debug.LogError("OutEnum");
+        return 0f;
+    }
 }

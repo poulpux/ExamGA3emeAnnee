@@ -21,7 +21,7 @@ public class Card : MonoBehaviour
     protected string nameOfCard;
     protected int cost;
     protected TYPE type;
-    public int damage, pv;
+     public int damage, pv;
     protected SpriteRenderer spriteRenderer;
     protected Color startColor;
     [SerializeField] protected SpriteRenderer knob;

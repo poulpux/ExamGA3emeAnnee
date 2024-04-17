@@ -6,7 +6,7 @@ public class ElixirSpawner : MonoBehaviour
 {
     [SerializeField] BoxCollider2D spawnPos;
     [SerializeField] private GameObject prefabElixir;
-    [SerializeField] float CldwnNormal, CldwnFast, random;
+    [SerializeField] float CldwnNormal, CldwnFast, random, timeToDestroy = 15f;
     float timerXp, currentCldwn;
     void Start()
     {
@@ -31,6 +31,8 @@ public class ElixirSpawner : MonoBehaviour
         xp1.transform.position = randomPos;
         GameObject xp2 = Instantiate(prefabElixir);
         xp2.transform.position = randomPos * new Vector2(1f,-1f);
+        Destroy(xp2, timeToDestroy);
+        Destroy(xp1, timeToDestroy);
 
         return true;
     }
