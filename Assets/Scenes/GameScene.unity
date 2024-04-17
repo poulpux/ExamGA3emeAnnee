@@ -4942,6 +4942,8 @@ MonoBehaviour:
   WinScreenObj: {fileID: 1035230476}
   textWinner: {fileID: 528245384}
   timerText: {fileID: 1754051567}
+  J1Tour: {fileID: 1892308504}
+  J2Tour: {fileID: 35686728}
 --- !u!1 &1201366443
 GameObject:
   m_ObjectHideFlags: 0

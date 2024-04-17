@@ -72,7 +72,7 @@ public class Card : MonoBehaviour
     private Color CalculateColor(float lifePourcentage01)
     { 
         float maxLight = startColor.r > startColor.g &&  startColor.r > startColor.b ? startColor.r : startColor.g > startColor.b ? startColor.g : startColor.b;
-        maxLight = maxLight + 50f / 255f >= 1f ? 1f : maxLight + 50f;
+        maxLight = maxLight + 50f / 255f >= 1f ? 1f : maxLight + 50f/255f;
         return new Color(Calculator(startColor.r, maxLight, lifePourcentage01), Calculator(startColor.g, maxLight, lifePourcentage01), Calculator(startColor.b, maxLight, lifePourcentage01));
     }
 

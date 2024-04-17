@@ -20,7 +20,9 @@ public class LoopManager : MonoBehaviour
     [SerializeField] BoxCollider2D J1Left, J1Right, J2Left, J2Right;
     [SerializeField] GameObject WinScreenObj;
     [SerializeField] TextMeshProUGUI textWinner, timerText;
+    [SerializeField] Card J1Tour, J2Tour;
 
+    bool stopTimer;
     float timerLeave, timerGame = 180f;
     int nbTap;
     private void Awake()
@@ -36,6 +38,7 @@ public class LoopManager : MonoBehaviour
 
         StartCoroutine(StartGame());
         StartCoroutine(SpeedUp());
+        StartCoroutine(EndWithTime());
     }
 
     private void Update()
@@ -46,11 +49,14 @@ public class LoopManager : MonoBehaviour
 
     private void TimerGameGestion()
     {
-        timerGame -= Time.deltaTime;
-        int minutes = (int)timerGame / 60;
-        int seconde = (int)timerGame - minutes * 60;
-        timerText.text = "";
-        timerText.text = minutes.ToString() +" : "+seconde.ToString();
+        if (!stopTimer)
+        {
+            timerGame -= Time.deltaTime;
+            int minutes = (int)timerGame / 60;
+            int seconde = (int)timerGame - minutes * 60;
+            timerText.text = "";
+            timerText.text = minutes.ToString() + " : " + seconde.ToString();
+        }
     }
 
     private void LeaveSecurity()
@@ -70,6 +76,7 @@ public class LoopManager : MonoBehaviour
 
     private IEnumerator EndGame(bool J1)
     {
+        stopTimer = true;
         Time.timeScale = 0f;
         WinScreenObj.SetActive(true);
         textWinner.text = J1 ? "Player 2 win !!!" : "Player 1 win !!!";
@@ -109,7 +116,13 @@ public class LoopManager : MonoBehaviour
         yield return new WaitForSeconds(120f);
         SpeedUpEvent.Invoke();
         yield break;
-
+    }
+    
+    private IEnumerator EndWithTime()
+    {
+        yield return new WaitForSeconds(180f);
+        MiddleTourDestroyEvent.Invoke(J1Tour.pv > J2Tour.pv ? false : true);
+        yield break;
     }
 
 }
