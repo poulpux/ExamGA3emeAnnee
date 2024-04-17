@@ -107,14 +107,14 @@ public class Batiment : Card
             spriteRenderer.color = new Color(222f/255f, 222f / 255f, 222f / 255f);
             if (batType == BATIMENTTYPE.LEFT)
             {
-                GetComponent<BoxCollider2D>().enabled = false;
+                GetComponent<Collider2D>().enabled = false;
                 LoopManager.Instance.LeftTourDestroyEvent.Invoke(J1);
                 activate = false;
                 GetComponent<Card>().enabled = false;
             }
             else if (batType == BATIMENTTYPE.RIGHT)
             {
-                GetComponent<BoxCollider2D>().enabled = false;
+                GetComponent<Collider2D>().enabled = false;
                 LoopManager.Instance.RightTourDestroyEvent.Invoke(J1);
                 activate = false;
                 GetComponent<Card>().enabled = false;

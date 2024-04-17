@@ -41,7 +41,7 @@ public partial class Troupe : StateManager
         attack.InitState(onAttackEnter, onAttackUpdate,onAttackExit);
         ForcedCurrentState(spawn);
 
-        moveSpd = troupeInfo.moveSpd;
+        moveSpd = SetSpeed();
         range = troupeInfo.range;
         attackType = troupeInfo.attackType;
         attackSpd = troupeInfo.attackSpd;
@@ -73,4 +73,20 @@ public partial class Troupe : StateManager
         yield break;
     }
 
+    private float SetSpeed()
+    {
+        if (troupeInfo.speedType == SPEED.ULTRALOW)
+            return 0.28f;
+        else if (troupeInfo.speedType == SPEED.LOW)
+            return 0.6f;
+        else if (troupeInfo.speedType == SPEED.MIDDLE)
+            return 0.8f;
+        else if (troupeInfo.speedType == SPEED.FAST)
+            return 1f;
+        else if (troupeInfo.speedType == SPEED.ULTRAFAST)
+            return 1.2f;
+
+        Debug.LogError("OutEnum");
+        return 0f;
+    }
 }
