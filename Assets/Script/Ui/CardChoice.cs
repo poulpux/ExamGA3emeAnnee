@@ -4,9 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardSelectionUI : GetInput
+public class CardChoice : GetInput
 {
-
     [SerializeField] private Deck deck;
     [SerializeField] private Transform C1, C2, C3, nextCard;
     [SerializeField] private Image visuC1, visuC2, visuC3, visuNextCard, cadre1, cadre2, cadre3;
@@ -29,7 +28,7 @@ public class CardSelectionUI : GetInput
         Destroy(visuC3.gameObject);
         Destroy(visuNextCard.gameObject);
 
-        visuC1 = Instantiate( deck.currentCards[0].visuUi, C1.transform);
+        visuC1 = Instantiate(deck.currentCards[0].visuUi, C1.transform);
         visuC2 = Instantiate(deck.currentCards[1].visuUi, C2.transform);
         visuC3 = Instantiate(deck.currentCards[2].visuUi, C3.transform);
         visuNextCard = Instantiate(deck.nextCard.visuUi, nextCard.transform);
