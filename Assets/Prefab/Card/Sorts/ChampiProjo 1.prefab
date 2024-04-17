@@ -140,7 +140,7 @@ MonoBehaviour:
   damage: 0
   pv: 0
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
-  sortInfo: {fileID: 11400000, guid: 83f9a79ea1d81fc4b8595d1fda1e2d73, type: 2}
+  sortInfo: {fileID: 11400000, guid: de246a7b993aa7943bbd47b5809ba594, type: 2}
 --- !u!114 &2217020626203356973
 MonoBehaviour:
   m_ObjectHideFlags: 0

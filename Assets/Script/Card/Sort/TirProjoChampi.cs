@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class TirProjoChampi : MonoBehaviour
 {
-    [SerializeField] Card exploChampiPrefab;
+    [SerializeField] Sort exploChampiPrefab;
     [SerializeField] int damage;
     private void OnDestroy()
     {
-        print("destroy");
-        Card explosion = Instantiate(exploChampiPrefab);
-        explosion.SetTeam(GetComponent<Card>().J1);
-        explosion.damage = damage;
-        print("setDamage");
+        Sort explosion = Instantiate(exploChampiPrefab);
         explosion.transform.position = transform.position;
+        explosion.SetAllValue(null, 0f, damage, GetComponent<Card>().J1);
     }
 }

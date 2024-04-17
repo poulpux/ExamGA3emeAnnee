@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7359178684881599171}
   - component: {fileID: 505252086444858380}
   - component: {fileID: 1165698918848150617}
+  - component: {fileID: 1466820450822449958}
   m_Layer: 0
   m_Name: ChampiProjo
   m_TagString: Untagged
@@ -133,10 +134,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa06f7febdb9304aa3da70e3dec6fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardInfo: {fileID: 11400000, guid: 4e63e537b7a6f7e4c89b094bf23253a1, type: 2}
+  cardInfo: {fileID: 11400000, guid: 8060ad63723239f44824764d061de217, type: 2}
   J1: 0
   visuUi: {fileID: 0}
-  damage: 0
+  damage: 30
   pv: 0
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
   sortInfo: {fileID: 11400000, guid: 83f9a79ea1d81fc4b8595d1fda1e2d73, type: 2}
+--- !u!114 &1466820450822449958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647178636763762597}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1229a9e6d9be64fb4645492ab13b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sort: {fileID: 1165698918848150617}
