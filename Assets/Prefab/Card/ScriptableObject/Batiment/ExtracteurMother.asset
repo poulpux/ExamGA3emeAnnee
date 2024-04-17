@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d9ef72044b4384fb259fee719fe4e1, type: 3}
   m_Name: ExtracteurMother
   m_EditorClassIdentifier: 
-  nameOfCard: Extracteur d'elixir
+  nameOfCard: "Extracteur d'\xE9lixir"
+  description: "Pour des rendements d'\xE9lixir \xE0 crever les plafond, l'extracteur
+    d'\xE9lixir est fait pour vous."
   cost: 5
   type: 1
   damage: 0

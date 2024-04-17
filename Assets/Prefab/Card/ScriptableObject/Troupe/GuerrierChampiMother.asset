@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d9ef72044b4384fb259fee719fe4e1, type: 3}
   m_Name: GuerrierChampiMother
   m_EditorClassIdentifier: 
-  nameOfCard: Champore
+  nameOfCard: Chancepore
   cost: 4
   type: 0
   damage: 50

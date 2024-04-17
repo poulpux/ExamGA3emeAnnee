@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ChampiProjoMother
   m_EditorClassIdentifier: 
   nameOfCard: Champiti
+  description: "Fatigu\xE9 un peu"
   cost: 3
   type: 0
   damage: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Brume
   m_EditorClassIdentifier: 
   nameOfCard: Brume
+  description: Pour semer le chaos sur le champ de bataille.
   cost: 2
   type: 2
   damage: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ChevalierMother
   m_EditorClassIdentifier: 
   nameOfCard: Soldat
+  description: ...
   cost: 3
   type: 0
   damage: 25

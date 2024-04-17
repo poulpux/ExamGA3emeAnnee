@@ -17,4 +17,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   attackSpd: 0.00001
   bulletSpd: 0
-  timeAlife: 20
+  timeAlife: 40

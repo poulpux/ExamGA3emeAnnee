@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: JugementDivin
   m_EditorClassIdentifier: 
   nameOfCard: Jugement divin
+  description: Inviktus Exorsisum Cadavra
   cost: 4
   type: 2
-  damage: 0
+  damage: 500
   pv: 0

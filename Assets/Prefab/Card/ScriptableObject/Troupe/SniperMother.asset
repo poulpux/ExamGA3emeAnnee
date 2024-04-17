@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SniperMother
   m_EditorClassIdentifier: 
   nameOfCard: Sniper
+  description: Une balle, un mort.
   cost: 4
   type: 0
   damage: 35
   pv: 380
-  visuUi: {fileID: 0}

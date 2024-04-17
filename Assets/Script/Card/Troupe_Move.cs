@@ -80,7 +80,6 @@ public partial class Troupe
             Card targetCard = item.GetComponent<Card>();
             if (targetCard != null && targetCard.cardInfo.type != TYPE.SORT)
             {
-                Vector2 direction = new Vector2(item.transform.position.x, item.transform.position.y) - new Vector2(transform.position.x, transform.position.y);
                 if (attackType == ATTACKTYPE.DISTANCE)
                 {
                     targetAttack = targetCard;
@@ -88,6 +87,7 @@ public partial class Troupe
                 }
                 else if(targetCard)
                 {
+                    Vector2 direction = new Vector2(item.transform.position.x, item.transform.position.y) - new Vector2(transform.position.x, transform.position.y);
                     if (!Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), direction, range, (1 << LayerMask.NameToLayer("Default")))
                         || Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), direction, range, (1 << LayerMask.NameToLayer("Default"))).distance > Vector3.Distance(item.transform.position, transform.position))
                     {

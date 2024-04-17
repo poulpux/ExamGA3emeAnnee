@@ -11,7 +11,7 @@ public enum ATTACKTYPE
 [RequireComponent(typeof(Rigidbody2D))]
 public partial class Troupe : StateManager
 {
-    [SerializeField] private ScriptableObjectTroupe troupeInfo;
+    public ScriptableObjectTroupe troupeInfo;
     protected float moveSpd, range, attackSpd, bulletSpd;
     ATTACKTYPE attackType;
     private bool active;
