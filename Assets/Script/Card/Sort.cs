@@ -41,7 +41,7 @@ public class Sort : Card
         else if(target != null)
         {
             bool explose = false;
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, transform.localScale.x, !J1 ? (1 << LayerMask.NameToLayer("TroupeP1")) : (1 << LayerMask.NameToLayer("TroupeP2")));
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, transform.localScale.x * 0.5f, !J1 ? (1 << LayerMask.NameToLayer("TroupeP1")) : (1 << LayerMask.NameToLayer("TroupeP2")));
             foreach (var item in colliders)
             {
                 Card target = item.GetComponent<Card>();
@@ -80,6 +80,5 @@ public class Sort : Card
     private void InstantiateAll()
     {
         zone = sortInfo.zone;
-        spd = sortInfo.spd;
     }
 }

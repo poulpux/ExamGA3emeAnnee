@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304f564ab657d8c499c6390dc0d87280, type: 3}
   m_Name: GuerrierChampi
   m_EditorClassIdentifier: 
-  range: 0.8
+  range: 1
   attackSpd: 1
   bulletSpd: 0
   attackType: 0

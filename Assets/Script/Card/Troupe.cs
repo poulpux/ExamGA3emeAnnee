@@ -30,7 +30,7 @@ public partial class Troupe : StateManager
         LoopManager.Instance.RightTourDestroyEvent.AddListener((J1) => { if (J1 != this.J1) ChangeState(move); });
         rb.freezeRotation = true;
         rb.excludeLayers = ((1 << LayerMask.NameToLayer("CollisionP1") | (1 << LayerMask.NameToLayer("CollisionP2"))));
-        distInterest = range + 0.5f;
+        distInterest = /*range + 0.5f*/0f;
     }
 
     private void Start()

@@ -10,7 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06ff9ed8401344e49bc31e24164710c1, type: 3}
-  m_Name: Valkyrie
+  m_Name: PasZone
   m_EditorClassIdentifier: 
-  spd: 0
-  zone: 1
+  zone: 0

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32d9ef72044b4384fb259fee719fe4e1, type: 3}
-  m_Name: GuerrierChampiMother
+  m_Name: DefaultMotherSort
   m_EditorClassIdentifier: 
   nameOfCard: 
-  cost: 4
-  type: 0
-  damage: 50
-  pv: 750
+  cost: 0
+  type: 2
+  damage: 0
+  pv: 0
   visuUi: {fileID: 0}

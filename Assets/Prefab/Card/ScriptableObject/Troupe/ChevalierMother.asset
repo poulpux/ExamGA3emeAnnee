@@ -16,5 +16,5 @@ MonoBehaviour:
   cost: 3
   type: 0
   damage: 25
-  pv: 550
+  pv: 600
   visuUi: {fileID: 0}

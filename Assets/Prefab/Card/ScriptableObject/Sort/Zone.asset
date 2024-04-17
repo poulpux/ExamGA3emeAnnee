@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d9ef72044b4384fb259fee719fe4e1, type: 3}
-  m_Name: GuerrierChampiMother
+  m_Script: {fileID: 11500000, guid: 06ff9ed8401344e49bc31e24164710c1, type: 3}
+  m_Name: Zone
   m_EditorClassIdentifier: 
-  nameOfCard: 
-  cost: 4
-  type: 0
-  damage: 50
-  pv: 750
-  visuUi: {fileID: 0}
+  zone: 1
