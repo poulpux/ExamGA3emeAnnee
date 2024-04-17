@@ -21,8 +21,8 @@ public class Batiment : Card
     private float range;
     private BATIMENTTYPE batType;
     private Sort bulletPrefab;
-    private float attackSpd, bulletSpd;
-
+    private float attackSpd, bulletSpd, timeAlife;
+    private float lifeTimer; 
     protected override void Awake()
     {
         base.Awake();
@@ -64,6 +64,8 @@ public class Batiment : Card
         if (timerAttack > 1f / attackSpd)
             Attack();
 
+        if (batType == BATIMENTTYPE.CARD)
+            timeAlifeGestion();
     }
 
     private void Activate()
@@ -131,6 +133,7 @@ public class Batiment : Card
         bulletPrefab = batInfo.bulletPrefab;
         attackSpd = batInfo.attackSpd;
         bulletSpd = batInfo.bulletSpd;  
+        timeAlife = batInfo.timeAlife;  
     }
     public override void Invoque(Vector3 spawnPos, bool J1)
     {
@@ -139,4 +142,13 @@ public class Batiment : Card
         objet.GetComponent<Card>().SetTeam(J1);
     }
 
+    private void timeAlifeGestion()
+    {
+        lifeTimer += Time.deltaTime * (float)cardInfo.pv / timeAlife;
+        if(lifeTimer > 1f)
+        {
+            lifeTimer = 0;
+            TakeDamage(1);
+        }
+    }
 }
