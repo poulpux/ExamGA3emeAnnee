@@ -6110,9 +6110,9 @@ MonoBehaviour:
   - {fileID: 2230705923025693030, guid: b64b89ff46e33bb438f720fdde3cf3c6, type: 3}
   - {fileID: 7641398190474128875, guid: 8a7cc88fa53ce4b4e8d183a5dc7bfbc5, type: 3}
   - {fileID: 4347915866408132703, guid: 356e84d456dafeb4bbd5844c7fb44d85, type: 3}
-  - {fileID: 2895313031736566044, guid: 28cfa72cd4f3f1d4fb3c24e13d157780, type: 3}
   - {fileID: 5734250320531421711, guid: 5b55ef37584788a468e7e8bed764b953, type: 3}
   - {fileID: 852242395945588996, guid: 54cd9eb015d9f2e4080ac7daa007d410, type: 3}
+  - {fileID: 640736724601409263, guid: 9ff84e339583c8b46bc9f2851980f6e7, type: 3}
   currentCards: []
   backCard: []
   nextCard: {fileID: 0}
@@ -6701,10 +6701,10 @@ MonoBehaviour:
   cards:
   - {fileID: 2230705923025693030, guid: b64b89ff46e33bb438f720fdde3cf3c6, type: 3}
   - {fileID: 7641398190474128875, guid: 8a7cc88fa53ce4b4e8d183a5dc7bfbc5, type: 3}
-  - {fileID: 4347915866408132703, guid: 356e84d456dafeb4bbd5844c7fb44d85, type: 3}
   - {fileID: 2895313031736566044, guid: 28cfa72cd4f3f1d4fb3c24e13d157780, type: 3}
   - {fileID: 5734250320531421711, guid: 5b55ef37584788a468e7e8bed764b953, type: 3}
   - {fileID: 852242395945588996, guid: 54cd9eb015d9f2e4080ac7daa007d410, type: 3}
+  - {fileID: 640736724601409263, guid: 9ff84e339583c8b46bc9f2851980f6e7, type: 3}
   currentCards: []
   backCard: []
   nextCard: {fileID: 0}

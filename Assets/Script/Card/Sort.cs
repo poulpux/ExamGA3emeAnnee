@@ -91,7 +91,8 @@ public class Sort : Card
     {
         GameObject objet = Instantiate(gameObject);
         objet.transform.position = spawnPos;
-        objet.GetComponent<Card>().SetTeam(J1);
+        //objet.GetComponent<Card>().SetTeam(J1);
+        this.J1 = J1;
     }
 
     public void InvoqueSurMesure(Vector3 spawnPos, int damage, bool J1)
