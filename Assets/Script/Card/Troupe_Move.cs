@@ -78,7 +78,7 @@ public partial class Troupe
                     targetAttack = targetCard;
                     ChangeState(attack);
                 }
-                else
+                else if(targetCard)
                 {
                     if (!Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), direction, range, (1 << LayerMask.NameToLayer("Default")))
                         || Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), direction, range, (1 << LayerMask.NameToLayer("Default"))).distance > Vector3.Distance(item.transform.position, transform.position))

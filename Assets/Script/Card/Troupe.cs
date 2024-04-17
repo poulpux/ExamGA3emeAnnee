@@ -16,15 +16,25 @@ public partial class Troupe : StateManager
     ATTACKTYPE attackType;
     private bool active;
     private Sort bulletPrefab;
+    [SerializeField] bool plusieurs;
 
     protected override void Awake()
     {
         base.Awake();
+
+        if (plusieurs)
+            return;
         InstantiateAll();
         StartCoroutine(SpawnTimer());
         LoopManager.Instance.LeftTourDestroyEvent.AddListener((J1) => { if (J1 != this.J1) ChangeState(move); });
         LoopManager.Instance.RightTourDestroyEvent.AddListener((J1) => { if (J1 != this.J1) ChangeState(move); });
         rb.freezeRotation = true;
+        rb.excludeLayers = ((1 << LayerMask.NameToLayer("CollisionP1") | (1 << LayerMask.NameToLayer("CollisionP2"))));
+    }
+
+    private void Start()
+    {
+        
     }
 
     protected override void Update()
@@ -64,6 +74,17 @@ public partial class Troupe : StateManager
 
         // Changer le parent de l'objet instancié
         sprite.transform.SetParent(transform);
+
+        if (plusieurs)
+            Plusieurs();
+    }
+
+    private void Plusieurs()
+    {
+            foreach (Transform child in transform)
+                child.GetComponent<Troupe>()?.SetTeam(J1);
+            transform.DetachChildren();
+        Destroy(gameObject);
     }
 
     private IEnumerator SpawnTimer()
@@ -78,13 +99,13 @@ public partial class Troupe : StateManager
         if (troupeInfo.speedType == SPEED.ULTRALOW)
             return 0.28f;
         else if (troupeInfo.speedType == SPEED.LOW)
-            return 0.6f;
+            return 0.42f;
         else if (troupeInfo.speedType == SPEED.MIDDLE)
-            return 0.8f;
+            return 0.56f;
         else if (troupeInfo.speedType == SPEED.FAST)
-            return 1f;
+            return 0.7f;
         else if (troupeInfo.speedType == SPEED.ULTRAFAST)
-            return 1.2f;
+            return 0.84f;
 
         Debug.LogError("OutEnum");
         return 0f;

@@ -15,6 +15,7 @@ public partial class Troupe
     }
     private void onAttackUpdate()
     {
+
         if(targetAttack == null)
         {
             ChangeState(move);
@@ -56,5 +57,6 @@ public partial class Troupe
         {
             targetAttack.TakeDamage(damage);
         }
+        rb.velocity = Vector3.zero;
     }
 }

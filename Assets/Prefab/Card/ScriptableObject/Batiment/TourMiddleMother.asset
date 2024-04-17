@@ -15,6 +15,6 @@ MonoBehaviour:
   nameOfCard: TourMiddle
   cost: 0
   type: 1
-  damage: 50
+  damage: 75
   pv: 3200
   visuUi: {fileID: 0}

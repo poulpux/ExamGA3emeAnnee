@@ -15,6 +15,6 @@ MonoBehaviour:
   nameOfCard: TourLeft
   cost: 0
   type: 1
-  damage: 30
+  damage: 45
   pv: 2000
   visuUi: {fileID: 0}
