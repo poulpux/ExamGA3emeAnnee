@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d9ef72044b4384fb259fee719fe4e1, type: 3}
   m_Name: ExtracteurMother
   m_EditorClassIdentifier: 
-  nameOfCard: 
+  nameOfCard: Extracteur d'elixir
   cost: 5
   type: 1
   damage: 0
   pv: 1500
-  visuUi: {fileID: 0}

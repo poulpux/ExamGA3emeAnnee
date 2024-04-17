@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d9ef72044b4384fb259fee719fe4e1, type: 3}
   m_Name: PEKAMother
   m_EditorClassIdentifier: 
-  nameOfCard: PEKA
+  nameOfCard: P.A.C.A
   cost: 7
   type: 0
   damage: 300
   pv: 2100
-  visuUi: {fileID: 0}
