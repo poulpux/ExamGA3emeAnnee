@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 1206267792234283800}
   - component: {fileID: 6200815886158536406}
   - component: {fileID: 640736724601409263}
+  - component: {fileID: 1340254963261315936}
   m_Layer: 0
-  m_Name: JugementDivin
+  m_Name: JugementDivinPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +140,20 @@ MonoBehaviour:
   damage: 0
   pv: 0
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
-  sortInfo: {fileID: 11400000, guid: 83f9a79ea1d81fc4b8595d1fda1e2d73, type: 2}
+  sortInfo: {fileID: 11400000, guid: de246a7b993aa7943bbd47b5809ba594, type: 2}
   OnActivationEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1340254963261315936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2345494922696372349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d80196ef0c330a4f88787201a79cc74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 500

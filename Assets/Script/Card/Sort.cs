@@ -18,27 +18,10 @@ public class Sort : Card
     {
         base.Awake();
         InstantiateAll();
-        Destroy(gameObject, 2f);
+        print("awake " + zone);
         if(zone)
-        {
-            bool explose = false;
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, transform.localScale.x * 2, !J1 ? (1 << LayerMask.NameToLayer("TroupeP1")) : (1 << LayerMask.NameToLayer("TroupeP2")));
-            foreach (var item in colliders)
-            {
-                Card target = item.GetComponent<Card>();
-                if (target != null && target.cardInfo.type != TYPE.SORT)
-                {
-                    print("makeDamage " + damage + target.gameObject);
-                    target.TakeDamage(damage);
-                    explose = true;
-                }
-            }
-            if (explose)
-            {
-                print("destroy");
-                Destroy(gameObject);
-            }
-        }
+            Destroy(gameObject);
+        Destroy(gameObject, 2f);
     }
 
     void Update()
@@ -144,5 +127,22 @@ public class Sort : Card
         GameObject objet = Instantiate(gameObject);
         objet.transform.position = spawnPos;
         SetAllValue(null, 0f, damage, J1, true);
+    }
+
+    private void OnDestroy()
+    {
+        if (zone)
+        {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 100f, !GetComponent<Card>().J1 ? (1 << LayerMask.NameToLayer("TroupeP1")) : (1 << LayerMask.NameToLayer("TroupeP2")));
+            foreach (var item in colliders)
+            {
+                Card target = item.GetComponent<Card>();
+                if (target != null && target.cardInfo.type != TYPE.SORT)
+                {
+                    print("hit " + damage);
+                    target.TakeDamage(damage);
+                }
+            }
+        }
     }
 }

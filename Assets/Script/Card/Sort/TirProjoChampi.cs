@@ -13,7 +13,9 @@ public class TirProjoChampi : MonoBehaviour
         {
             Card target = item.GetComponent<Card>();
             if (target != null && target.cardInfo.type != TYPE.SORT)
+            {
                 target.TakeDamage(damage);
+            }
         }
     }
 }

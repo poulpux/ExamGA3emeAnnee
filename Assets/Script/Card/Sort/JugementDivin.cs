@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class JugementDivin : MonoBehaviour
 {
-    public int damage;
-    void Start()
+    [SerializeField] int damage;
+    private void OnDestroy()
     {
-        GetComponent<Sort>().OnActivationEvent.AddListener(()=>PlayJugementDivin());
-    }
-
-    private void PlayJugementDivin()
-    {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, transform.localScale.x, !GetComponent<Card>().J1 ? (1 << LayerMask.NameToLayer("TroupeP1")) : (1 << LayerMask.NameToLayer("TroupeP2")));
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, transform.localRotation.x / 2f, !GetComponent<Card>().J1 ? (1 << LayerMask.NameToLayer("TroupeP1")) : (1 << LayerMask.NameToLayer("TroupeP2")));
         foreach (var item in colliders)
         {
             Card target = item.GetComponent<Card>();
             if (target != null && target.cardInfo.type != TYPE.SORT)
+            {
                 target.TakeDamage(damage);
+            }
         }
-        print("jugementDivin");
     }
 }
