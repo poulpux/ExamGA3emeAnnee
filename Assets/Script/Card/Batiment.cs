@@ -76,7 +76,7 @@ public class Batiment : Card
     {
         Sort bullet = Instantiate(bulletPrefab);
         bullet.transform.position = transform.position;
-        bullet.SetAllValue(target, bulletSpd, cardInfo.damage);
+        bullet.SetAllValue(target, bulletSpd, cardInfo.damage, J1);
         timerAttack = 0f;
     }
 

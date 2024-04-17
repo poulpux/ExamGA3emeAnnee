@@ -50,7 +50,7 @@ public partial class Troupe
         {
             Sort bullet = Instantiate(bulletPrefab);
             bullet.transform.position = transform.position;
-            bullet.SetAllValue(targetAttack, bulletSpd, damage);
+            bullet.SetAllValue(targetAttack, bulletSpd, damage, J1);
         }
         else
         {
