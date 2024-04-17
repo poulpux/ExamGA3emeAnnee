@@ -5693,6 +5693,22 @@ MonoBehaviour:
   timerText: {fileID: 1754051567}
   J1Tour: {fileID: 1892308504}
   J2Tour: {fileID: 35686728}
+  allCards:
+  - {fileID: 852242395945588996, guid: 54cd9eb015d9f2e4080ac7daa007d410, type: 3}
+  - {fileID: 4347915866408132703, guid: 356e84d456dafeb4bbd5844c7fb44d85, type: 3}
+  - {fileID: 659391726134162569, guid: b3d2a14d0cf2d654d8e6ed077e774d41, type: 3}
+  - {fileID: 2895313031736566044, guid: 28cfa72cd4f3f1d4fb3c24e13d157780, type: 3}
+  - {fileID: 7641398190474128875, guid: 8a7cc88fa53ce4b4e8d183a5dc7bfbc5, type: 3}
+  - {fileID: 2459000343644963097, guid: 7b73b767beaad7445bf43c15275a316c, type: 3}
+  - {fileID: 8850042110899916309, guid: 34ea4b4dd0c2d47428646fd261795ba9, type: 3}
+  - {fileID: 7740162830393842393, guid: 04b3d3bafd5153f4d9ac610bea862cfb, type: 3}
+  - {fileID: 2290779162939215437, guid: 9f0748f5add09054a9e98bb2a84fb2ef, type: 3}
+  - {fileID: 5734250320531421711, guid: 5b55ef37584788a468e7e8bed764b953, type: 3}
+  - {fileID: 3730122092757809548, guid: 0e8d96235abbb944d909fd4721251ac7, type: 3}
+  - {fileID: 640736724601409263, guid: 9ff84e339583c8b46bc9f2851980f6e7, type: 3}
+  - {fileID: 2230705923025693030, guid: b64b89ff46e33bb438f720fdde3cf3c6, type: 3}
+  J1Deck: {fileID: 1419819473}
+  J2Deck: {fileID: 1268432475}
 --- !u!1 &1201366443
 GameObject:
   m_ObjectHideFlags: 0
@@ -7785,7 +7801,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735367351}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1000.5, y: 540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10782,5 +10798,5 @@ SceneRoots:
   - {fileID: 1759170646}
   - {fileID: 1856998713}
   - {fileID: 162202717}
-  - {fileID: 1735367353}
   - {fileID: 4375819291551419189}
+  - {fileID: 1735367353}

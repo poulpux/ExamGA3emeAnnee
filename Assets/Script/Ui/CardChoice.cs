@@ -10,9 +10,10 @@ public class CardChoice : GetInput
     [HideInInspector] public UnityEvent<int> SwitchSelectEvent = new UnityEvent<int> ();
 
     [SerializeField] private List<Image> listCadre = new List<Image>();
-    private List<int> listSave = new List<int>();
+    public List<int> listSave = new List<int>();
     [HideInInspector] public int selectedCard = 5;
     [SerializeField] Color basicColor, selectedColor, cursorColor;
+    [SerializeField] TextMeshProUGUI textReady;
     void Start()
     {
         selectedCard = 5;
@@ -22,6 +23,7 @@ public class CardChoice : GetInput
         SetCadre();
         SwitchSelectEvent.Invoke(selectedCard);
     }
+
 
     private void SaveNumber()
     {
@@ -37,6 +39,8 @@ public class CardChoice : GetInput
 
         if (!delete && listSave.Count < 6)
             listSave.Add(selectedCard);
+
+        SetReady();
     }
 
     private void SetCadre()
@@ -54,5 +58,10 @@ public class CardChoice : GetInput
 
         listCadre[selectedCard * 2].color = cursorColor;
         listCadre[selectedCard * 2 + 1].color = cursorColor;
+    }
+
+    private void SetReady()
+    {
+            textReady.enabled = listSave.Count == 6 ? true : false;
     }
 }

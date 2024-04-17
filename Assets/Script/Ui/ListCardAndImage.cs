@@ -17,6 +17,8 @@ public class ListCardAndImage : MonoBehaviour
     {
         J1.SwitchSelectEvent.AddListener((selected)=> J1Description(selected, true));
         J2.SwitchSelectEvent.AddListener((selected)=> J1Description(selected, false));
+
+        SetSaveInt();
     }
 
     void Start()
@@ -27,6 +29,27 @@ public class ListCardAndImage : MonoBehaviour
             Destroy(imgaList[i].gameObject);
             imgaList[i] = Instantiate(cards[i].visuUi, canvas.transform);
             imgaList[i].transform.position = pos;
+        }
+    }
+
+    private void SetSaveInt()
+    {
+        if (PlayerPrefs.GetInt("C1J1") != PlayerPrefs.GetInt("C2J1"))
+        {
+            for (int i = 1; i < 7; i++)
+            {
+                int index = PlayerPrefs.GetInt("C" + i + "J1");
+                J1.listSave.Add(index);
+            }
+        }
+
+        if (PlayerPrefs.GetInt("C1J2") != PlayerPrefs.GetInt("C2J2"))
+        {
+            for (int i = 1; i < 7; i++)
+            {
+                int index = PlayerPrefs.GetInt("C" + i + "J2");
+                J2.listSave.Add(index);
+            }
         }
     }
 

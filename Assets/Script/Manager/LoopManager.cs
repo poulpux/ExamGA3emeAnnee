@@ -22,6 +22,8 @@ public class LoopManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI textWinner, timerText;
     [SerializeField] Card J1Tour, J2Tour;
 
+    [SerializeField] private List<Card> allCards = new List<Card> ();
+    [SerializeField] Deck J1Deck, J2Deck;
     bool stopTimer;
     float timerLeave, timerGame = 180f;
     int nbTap;
@@ -39,12 +41,51 @@ public class LoopManager : MonoBehaviour
         StartCoroutine(StartGame());
         StartCoroutine(SpeedUp());
         StartCoroutine(EndWithTime());
+
+        SetCardOfTheDeck();
     }
 
     private void Update()
     {
         TimerGameGestion();
         LeaveSecurity();
+    }
+
+    private void SetCardOfTheDeck()
+    {
+        J1Deck.cards.Clear();
+        J2Deck.cards.Clear();
+        if (PlayerPrefs.GetInt("C1J1") == PlayerPrefs.GetInt("C2J1"))
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                J1Deck.cards.Add(allCards[i]);
+            }
+        }
+        else
+        {
+            for (int i = 1; i < 7; i++)
+            {
+                int index = PlayerPrefs.GetInt("C" + i + "J1");
+                J1Deck.cards.Add(allCards[index]);
+            }
+        }
+
+        if (PlayerPrefs.GetInt("C1J2") == PlayerPrefs.GetInt("C2J2"))
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                J2Deck.cards.Add(allCards[i]);
+            }
+        }
+        else
+        {
+            for (int i = 1; i < 7; i++)
+            {
+                int index = PlayerPrefs.GetInt("C" + i + "J2");
+                J2Deck.cards.Add(allCards[index]);
+            }
+        }
     }
 
     private void TimerGameGestion()
