@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BlobGeantMother
   m_EditorClassIdentifier: 
   nameOfCard: "Blob G\xE9ant"
-  description: Ca ne compte que pour un !
+  description: "Ca ne compte que pour un ! Invoque deux blobs \xE0 sa mort."
   cost: 6
   type: 0
   damage: 70
