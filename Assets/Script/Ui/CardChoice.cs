@@ -6,44 +6,49 @@ using UnityEngine.UI;
 
 public class CardChoice : GetInput
 {
-    [SerializeField] private Deck deck;
-    [SerializeField] private Transform C1, C2, C3, nextCard;
-    [SerializeField] private Image visuC1, visuC2, visuC3, visuNextCard, cadre1, cadre2, cadre3;
-    [SerializeField] Color basicColor, selectedColor;
-    [SerializeField] private TextMeshProUGUI cost1, cost2, cost3;
-    [HideInInspector] public int selectedCard = 2;
+    [SerializeField] private List<Image> listCadre = new List<Image>();
+    private List<int> listSave = new List<int>();
+    [HideInInspector] public int selectedCard = 5;
+    [SerializeField] Color basicColor, selectedColor, cursorColor;
     void Start()
     {
-        deck.playACardEvent.AddListener(() => CheckVisu());
-        isSwitchLeftEvent.AddListener(() => { selectedCard = selectedCard - 1 < 1 ? 3 : selectedCard - 1; SetCadre(); });
-        isSwitchRightEvent.AddListener(() => { selectedCard = selectedCard + 1 > 3 ? 1 : selectedCard + 1; SetCadre(); });
-        CheckVisu();
+        selectedCard = 5;
+        isSwitchLeftEvent.AddListener(() => { selectedCard = selectedCard - 1 < 0 ? 12 : selectedCard - 1; SetCadre(); });
+        isSwitchRightEvent.AddListener(() => { selectedCard = selectedCard + 1 > 12 ? 0 : selectedCard + 1; SetCadre(); });
+        isInvoquingEvent.AddListener(() => SaveNumber());
         SetCadre();
     }
 
-    private void CheckVisu()
+    private void SaveNumber()
     {
-        Destroy(visuC1.gameObject);
-        Destroy(visuC2.gameObject);
-        Destroy(visuC3.gameObject);
-        Destroy(visuNextCard.gameObject);
+        bool delete = false;
+        for(int i = 0; i < listSave.Count; i++)
+        {
+            if (listSave[i] == selectedCard)
+            {
+                listSave.RemoveAt(i);
+                delete = true;
+            }
+        }
 
-        visuC1 = Instantiate(deck.currentCards[0].visuUi, C1.transform);
-        visuC2 = Instantiate(deck.currentCards[1].visuUi, C2.transform);
-        visuC3 = Instantiate(deck.currentCards[2].visuUi, C3.transform);
-        visuNextCard = Instantiate(deck.nextCard.visuUi, nextCard.transform);
-        cost1.text = deck.currentCards[0].cardInfo.cost.ToString();
-        cost2.text = deck.currentCards[1].cardInfo.cost.ToString();
-        cost3.text = deck.currentCards[2].cardInfo.cost.ToString();
+        if (!delete && listSave.Count < 6)
+            listSave.Add(selectedCard);
     }
 
     private void SetCadre()
     {
-        cadre1.color = basicColor;
-        cadre2.color = basicColor;
-        cadre3.color = basicColor;
+        foreach (var item in listCadre)
+        {
+            item.color = basicColor;
+        }
 
-        Image cadreToChange = selectedCard == 1 ? cadre1 : selectedCard == 2 ? cadre2 : cadre3;
-        cadreToChange.color = selectedColor;
+        foreach (var item in listSave)
+        {
+            listCadre[item * 2].color = selectedColor;
+            listCadre[item * 2 + 1].color = selectedColor;
+        }
+
+        listCadre[selectedCard * 2].color = cursorColor;
+        listCadre[selectedCard * 2 + 1].color = cursorColor;
     }
 }
