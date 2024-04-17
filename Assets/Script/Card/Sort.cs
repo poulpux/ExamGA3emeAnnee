@@ -86,4 +86,18 @@ public class Sort : Card
     {
         zone = sortInfo.zone;
     }
+
+    public override void Invoque(Vector3 spawnPos, bool J1)
+    {
+        GameObject objet = Instantiate(gameObject);
+        objet.transform.position = spawnPos;
+        objet.GetComponent<Card>().SetTeam(J1);
+    }
+
+    public void InvoqueSurMesure(Vector3 spawnPos, int damage, bool J1)
+    {
+        GameObject objet = Instantiate(gameObject);
+        objet.transform.position = spawnPos;
+        SetAllValue(null, 0f, damage, J1, true);
+    }
 }

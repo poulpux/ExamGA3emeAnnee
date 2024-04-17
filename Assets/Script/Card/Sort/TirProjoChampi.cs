@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TirProjoChampi : MonoBehaviour
-{
-    [SerializeField] Sort exploChampiPrefab;
+{ 
     [SerializeField] int damage;
     private void OnDestroy()
     {
-        Sort explosion = Instantiate(exploChampiPrefab);
-        explosion.transform.position = transform.position;
-        explosion.SetAllValue(null, 0f, damage, GetComponent<Card>().J1);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.45f, !GetComponent<Card>().J1 ? (1 << LayerMask.NameToLayer("TroupeP1")) : (1 << LayerMask.NameToLayer("TroupeP2")));
+        foreach (var item in colliders)
+        {
+            Card target = item.GetComponent<Card>();
+            if (target != null && target.cardInfo.type != TYPE.SORT)
+            {
+                print("makeDamage " + damage);
+                target.TakeDamage(damage);
+            }
+        }
     }
 }
