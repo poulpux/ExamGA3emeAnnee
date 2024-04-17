@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ArmeDeBlobMother
   m_EditorClassIdentifier: 
   nameOfCard: Gang de blob
-  description: "Qu'il y a-t-il de mieux que un blob ? Cinq blobs bien \xE9videmment
+  description: "Qu'il y a-t-il de mieux qu'un blob ? Cinq blobs bien \xE9videmment
     !"
   cost: 5
   type: 0

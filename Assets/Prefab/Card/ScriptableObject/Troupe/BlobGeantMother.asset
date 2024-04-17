@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BlobGeantMother
   m_EditorClassIdentifier: 
   nameOfCard: "Blob G\xE9ant"
-  description: Juste un blob avec une ossature lourde.
+  description: Ca ne compte que pour un !
   cost: 6
   type: 0
   damage: 70

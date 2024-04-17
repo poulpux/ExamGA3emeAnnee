@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: SpawnerMother
   m_EditorClassIdentifier: 
   nameOfCard: "Cave \xE0 blob"
-  description: "Vous vous demandez surement o\xF9 vivent les blobs. Non ? A bah tant
-    pis"
+  description: "Vous vous demandez surement o\xF9 vivent les blobs. Non ? A bah super..."
   cost: 7
   type: 1
   damage: 0

@@ -17,4 +17,4 @@ MonoBehaviour:
   bulletSpd: 0
   attackType: 0
   bulletPrefab: {fileID: 0}
-  speedType: 0
+  speedType: 2
