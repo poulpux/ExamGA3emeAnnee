@@ -13,7 +13,7 @@ public enum BATIMENTTYPE
 
 public class Batiment : Card
 {
-    [SerializeField] private ScriptableObjectBatiment batInfo;
+    public ScriptableObjectBatiment batInfo;
     private Card target;
     float timerAttack;
     private bool activate = true;

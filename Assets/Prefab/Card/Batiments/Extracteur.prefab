@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4f8db066f0811478219195b9fa6cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elixirCldwn: 2.5
+  elixirCldwn: 5
 --- !u!1 &8162247739444096888
 GameObject:
   m_ObjectHideFlags: 0

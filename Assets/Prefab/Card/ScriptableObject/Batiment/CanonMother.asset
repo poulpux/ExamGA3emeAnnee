@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CanonMother
   m_EditorClassIdentifier: 
   nameOfCard: Canon
+  description: "Un canon, rien de mieux pour d\xE9fendre une base."
   cost: 3
   type: 1
   damage: 30
   pv: 1200
-  visuUi: {fileID: 0}

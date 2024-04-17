@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d9ef72044b4384fb259fee719fe4e1, type: 3}
   m_Name: SpawnerMother
   m_EditorClassIdentifier: 
-  nameOfCard: Spawer de blob
+  nameOfCard: "Cave \xE0 blob"
+  description: "Vous vous demandez surement o\xF9 vivent les blobs. Non ? A bah tant
+    pis"
   cost: 7
   type: 1
   damage: 0

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: BlobMother
   m_EditorClassIdentifier: 
   nameOfCard: Blob
+  description: "    ___                                                                                                                            
+    ~(*^*)/                                                                                                    
+    \xA8\xA8\xA8\xA8\xA8\xA8\xA8"
   cost: 1
   type: 0
   damage: 20
   pv: 300
-  visuUi: {fileID: 0}

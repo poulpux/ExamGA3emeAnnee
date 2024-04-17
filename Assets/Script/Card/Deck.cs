@@ -8,7 +8,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(GetInput))]
 public class Deck : GetInput
 {
-    [SerializeField] private List<Card> cards = new List<Card>();
+    public List<Card> cards = new List<Card>();
 
     public List<Card> currentCards = new List<Card>();
     public List<Card> backCard = new List<Card>();
@@ -23,6 +23,11 @@ public class Deck : GetInput
     protected override void Awake()
     {
         base.Awake();
+       
+    }
+
+    private void Start()
+    {
         player = GetComponent<PlayerElixir>();
         J1 = config == JNumber.PLAYER1 ? true : false;
         Melange();

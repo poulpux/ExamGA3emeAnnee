@@ -6,19 +6,27 @@ using UnityEngine.UI;
 
 public class CardSelectionUI : GetInput
 {
+
     [SerializeField] private Deck deck;
     [SerializeField] private Transform C1, C2, C3, nextCard;
     [SerializeField] private Image visuC1, visuC2, visuC3, visuNextCard, cadre1, cadre2, cadre3;
     [SerializeField] Color basicColor, selectedColor;
     [SerializeField] private TextMeshProUGUI cost1, cost2, cost3;
     [HideInInspector] public int selectedCard = 2;
-    void Start()
+
+    private bool firstUpdate;
+
+    private void Update()
     {
-        deck.playACardEvent.AddListener(() => CheckVisu());
-        isSwitchLeftEvent.AddListener(() => { selectedCard = selectedCard - 1 < 1 ? 3 : selectedCard - 1; SetCadre(); });
-        isSwitchRightEvent.AddListener(() => { selectedCard = selectedCard + 1 > 3 ? 1 : selectedCard + 1; SetCadre(); });
-        CheckVisu();
-        SetCadre();
+        if (!firstUpdate)
+        {
+            firstUpdate = true;
+            deck.playACardEvent.AddListener(() => CheckVisu());
+            isSwitchLeftEvent.AddListener(() => { selectedCard = selectedCard - 1 < 1 ? 3 : selectedCard - 1; SetCadre(); });
+            isSwitchRightEvent.AddListener(() => { selectedCard = selectedCard + 1 > 3 ? 1 : selectedCard + 1; SetCadre(); });
+            CheckVisu();
+            SetCadre();
+        }
     }
 
     private void CheckVisu()

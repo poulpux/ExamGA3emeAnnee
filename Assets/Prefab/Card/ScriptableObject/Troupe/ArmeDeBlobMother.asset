@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d9ef72044b4384fb259fee719fe4e1, type: 3}
   m_Name: ArmeDeBlobMother
   m_EditorClassIdentifier: 
-  nameOfCard: 
+  nameOfCard: Gang de blob
+  description: "Qu'il y a-t-il de mieux que un blob ? Cinq blobs bien \xE9videmment
+    !"
   cost: 5
   type: 0
   damage: 0
   pv: 0
-  visuUi: {fileID: 0}
