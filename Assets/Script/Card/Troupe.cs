@@ -55,6 +55,7 @@ public partial class Troupe : StateManager
         range = troupeInfo.range;
         attackType = troupeInfo.attackType;
         attackSpd = troupeInfo.attackSpd;
+        bulletSpd = troupeInfo.bulletSpd;
         bulletPrefab = troupeInfo.bulletPrefab;
 
         rb = GetComponent<Rigidbody2D>();

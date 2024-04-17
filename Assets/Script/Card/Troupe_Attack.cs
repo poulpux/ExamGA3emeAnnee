@@ -49,8 +49,7 @@ public partial class Troupe
         if (attackType == ATTACKTYPE.DISTANCE)
         {
             Sort bullet = Instantiate(bulletPrefab);
-            Vector3 direction = targetAttack.transform.position - transform.position;
-            bullet.transform.position = transform.position + direction;
+            bullet.transform.position = transform.position;
             bullet.SetAllValue(targetAttack, bulletSpd, damage);
         }
         else
