@@ -22,7 +22,7 @@ public class Batiment : Card
     private BATIMENTTYPE batType;
     private Sort bulletPrefab;
     private float attackSpd, bulletSpd, timeAlife;
-    private float lifeTimer; 
+    private float lifeTimer;
     protected override void Awake()
     {
         base.Awake();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEngine.ParticleSystem;
 
 [RequireComponent(typeof(PlayerElixir))]
 [RequireComponent(typeof(GetInput))]
@@ -13,6 +14,8 @@ public class Deck : GetInput
     public List<Card> currentCards = new List<Card>();
     public List<Card> backCard = new List<Card>();
     public Card nextCard;
+
+    [SerializeField] ParticleSystem spawnParticle;
 
 
     [HideInInspector] public UnityEvent playACardEvent = new UnityEvent();
@@ -59,6 +62,12 @@ public class Deck : GetInput
     {
         if (player.TryInvoqueCard(currentCards[index]))
         {
+            if (currentCards[index].cardInfo.type == TYPE.TROUPE)
+            {
+                GameObject obj = Instantiate(spawnParticle.gameObject);
+                obj.transform.position = transform.position;
+                obj.transform.localScale = new Vector3(currentCards[index].transform.localScale.x * obj.transform.localScale.x, currentCards[index].transform.localScale.y * obj.transform.localScale.y, currentCards[index].transform.localScale.z * obj.transform.localScale.z);
+            }
             backCard.Add(currentCards[index]);
             currentCards[index] = nextCard;
             nextCard = backCard[0];
