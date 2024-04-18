@@ -25021,8 +25021,12 @@ MonoBehaviour:
   WinScreenObj: {fileID: 1035230476}
   textWinner: {fileID: 528245384}
   timerText: {fileID: 1754051567}
-  J1Tour: {fileID: 1892308504}
-  J2Tour: {fileID: 35686728}
+  J1TourRoyale: {fileID: 1892308504}
+  J2TourRoyale: {fileID: 35686728}
+  J1LeftTour: {fileID: 1982241601}
+  J1RightTour: {fileID: 410146123}
+  J2LeftTour: {fileID: 2034433815}
+  J2RightTour: {fileID: 1201366447}
   allCards:
   - {fileID: 852242395945588996, guid: 54cd9eb015d9f2e4080ac7daa007d410, type: 3}
   - {fileID: 4347915866408132703, guid: 356e84d456dafeb4bbd5844c7fb44d85, type: 3}
