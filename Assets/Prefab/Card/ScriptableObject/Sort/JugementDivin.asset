@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Inviktus Purifikatum Cadavra
   cost: 4
   type: 2
-  damage: 500
+  damage: 380
   pv: 0

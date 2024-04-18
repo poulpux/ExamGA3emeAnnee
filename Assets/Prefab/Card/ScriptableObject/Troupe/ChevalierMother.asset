@@ -16,5 +16,5 @@ MonoBehaviour:
   description: ...
   cost: 3
   type: 0
-  damage: 25
+  damage: 50
   pv: 600

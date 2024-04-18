@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Une balle, un mort.
   cost: 4
   type: 0
-  damage: 35
+  damage: 65
   pv: 380

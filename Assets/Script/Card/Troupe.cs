@@ -32,7 +32,7 @@ public partial class Troupe : StateManager
         LoopManager.Instance.RightTourDestroyEvent.AddListener((J1) => { if (J1 != this.J1) ChangeState(move); });
         rb.freezeRotation = true;
         rb.excludeLayers = ((1 << LayerMask.NameToLayer("CollisionP1") | (1 << LayerMask.NameToLayer("CollisionP2"))));
-        //distInterest = /*range + 0.5f*/0f;
+        distInterest = range * 1.2f;
     }
 
     private void Start()
@@ -67,10 +67,13 @@ public partial class Troupe : StateManager
     public override void TakeDamage(int nbDamage)
     {
         base.TakeDamage(nbDamage);
-        GameObject particle = Instantiate(getHit.gameObject);
-        particle.transform.position = transform.position;
-        particle.transform.localScale = new Vector3(transform.localScale.x * particle.transform.localScale.x, transform.localScale.y * particle.transform.localScale.y, transform.localScale.z * particle.transform.localScale.z);
-        Destroy(particle.gameObject, 1f);
+        if (getHit != null)
+        {
+            GameObject particle = Instantiate(getHit.gameObject);
+            particle.transform.position = transform.position;
+            particle.transform.localScale = new Vector3(transform.localScale.x * particle.transform.localScale.x, transform.localScale.y * particle.transform.localScale.y, transform.localScale.z * particle.transform.localScale.z);
+            Destroy(particle.gameObject, 1f);
+        }
     }
 
     public override void Invoque(Vector3 spawnPos, bool J1)

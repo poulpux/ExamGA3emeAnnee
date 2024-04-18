@@ -16,5 +16,5 @@ MonoBehaviour:
   description: "Un canon, rien de mieux pour d\xE9fendre une base."
   cost: 3
   type: 1
-  damage: 30
-  pv: 1200
+  damage: 80
+  pv: 800

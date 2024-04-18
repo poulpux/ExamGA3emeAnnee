@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Unity.VisualScripting.Metadata;
 
 public enum TYPE
 {
@@ -46,13 +47,19 @@ public class Card : MonoBehaviour
 
     protected virtual void GetDestroy()
     {
+        Transform[] children = new Transform[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
+            children[i] = transform.GetChild(i);
+        foreach (Transform child in children)
+            Destroy(child.gameObject);
+
         Destroy(gameObject);
     }
 
     public virtual void SetTeam(bool J1)
     {
         this.J1 = J1;
-        gameObject.layer = LayerMask.NameToLayer(J1 ? "CollisionP2" : "CollisionP1");
+        gameObject.layer = LayerMask.NameToLayer(J1 ? "TroupeP1" : "TroupeP2");
         GameObject sprite = Instantiate(knob.gameObject, transform.position, transform.rotation, null);
         sprite.GetComponent<SpriteRenderer>().color = J1 ? Color.cyan : Color.red;
     }

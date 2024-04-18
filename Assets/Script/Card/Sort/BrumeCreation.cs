@@ -9,6 +9,6 @@ public class BrumeCreation : MonoBehaviour
     {
         GameObject brume = Instantiate(particle.gameObject);
         brume.transform.position = transform.position;
-        Destroy(brume.gameObject, 15f);
+        Destroy(brume.gameObject, 30f);
     }
 }

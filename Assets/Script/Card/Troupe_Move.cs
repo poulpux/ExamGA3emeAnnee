@@ -22,7 +22,7 @@ public partial class Troupe
             targetMove = Vector3.zero;
         }
 
-        if (interestTarget == null ) 
+        if (interestTarget == null)
             DetectInterrest();
 
         if (targetMove == Vector3.zero || Vector3.Distance(transform.position, targetMove) < 1f )
