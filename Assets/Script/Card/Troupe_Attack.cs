@@ -54,8 +54,17 @@ public partial class Troupe
         }
         else
         {
+            PlayFeedbackSlash();
             targetAttack.TakeDamage(damage);
         }
         rb.velocity = Vector3.zero;
+    }
+
+    private void PlayFeedbackSlash()
+    {
+        int index = Random.Range(0,listSlash.Count);
+        GameObject slash = Instantiate(listSlash[index].gameObject);
+        slash.transform.position = targetAttack.transform.position;
+        slash.transform.localScale = new Vector3(slash.transform.localScale.x * transform.localScale.x, slash.transform.localScale.y * transform.localScale.y, slash.transform.localScale.z * transform.localScale.z);
     }
 }

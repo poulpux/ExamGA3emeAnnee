@@ -8,6 +8,7 @@ MonoImporter:
   - visuUi: {instanceID: 0}
   - knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
   - troupeInfo: {instanceID: 0}
+  - getHit: {fileID: 7032040736321994801, guid: dce30036330418c42b335e3f769049d2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

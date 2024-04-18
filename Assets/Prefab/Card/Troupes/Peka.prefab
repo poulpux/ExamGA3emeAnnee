@@ -169,4 +169,9 @@ MonoBehaviour:
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
   troupeInfo: {fileID: 11400000, guid: 122740deac7a146429cb2cad7b7b585e, type: 2}
   plusieurs: 0
+  getHit: {fileID: 7032040736321994801, guid: dce30036330418c42b335e3f769049d2, type: 3}
+  listSlash:
+  - {fileID: 2614025510711383247, guid: 47fbef2ddeb2cb44db13c4c74392fae9, type: 3}
+  - {fileID: 1598479906131447970, guid: 5be240aadb26bb24398c101236435cb4, type: 3}
+  - {fileID: 2839156216590045713, guid: 4eb75d6936797bd40b83a16a5aa818ca, type: 3}
   distInterest: 2
