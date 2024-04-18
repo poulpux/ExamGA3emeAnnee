@@ -49,8 +49,6 @@ public class LoopManager : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time > 2f)
-            Time.timeScale = 5;
         TimerGameGestion();
         LeaveSecurity();
     }

@@ -18,7 +18,6 @@ public class Sort : Card
     {
         base.Awake();
         InstantiateAll();
-        print("awake " + zone);
         if(zone)
             Destroy(gameObject);
         Destroy(gameObject, 2f);
@@ -33,10 +32,6 @@ public class Sort : Card
 
         DeleteBullet();
         TouchTarget();
-
-        if(zone)
-        print("Uptade" +
-             transform.position+"  "+damage+" "+zone);
     }
 
     private void TouchTarget()

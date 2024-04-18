@@ -25282,6 +25282,7 @@ GameObject:
   - component: {fileID: 1268432473}
   - component: {fileID: 1268432474}
   - component: {fileID: 1268432475}
+  - component: {fileID: 1268432476}
   m_Layer: 8
   m_Name: Player2
   m_TagString: Untagged
@@ -25479,6 +25480,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   selectedCard: {fileID: 546945816}
+--- !u!114 &1268432476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268432468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70510c00ad28f404b933e52f32c7a089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 1, g: 0.050980393, b: 0, a: 1}
+  endColor: {r: 0.4811321, g: 0.024528304, b: 0, a: 1}
+  lerpDuration: 1
 --- !u!1 &1280593146
 GameObject:
   m_ObjectHideFlags: 0
@@ -30704,6 +30720,7 @@ GameObject:
   - component: {fileID: 1419819471}
   - component: {fileID: 1419819472}
   - component: {fileID: 1419819473}
+  - component: {fileID: 1419819474}
   m_Layer: 8
   m_Name: Player1
   m_TagString: Untagged
@@ -30901,6 +30918,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   selectedCard: {fileID: 1832765103}
+--- !u!114 &1419819474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419819466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70510c00ad28f404b933e52f32c7a089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 0, g: 1, b: 0.9226117, a: 1}
+  endColor: {r: 0, g: 0.5849056, b: 0.5390307, a: 1}
+  lerpDuration: 1
 --- !u!1 &1433480134
 GameObject:
   m_ObjectHideFlags: 0
