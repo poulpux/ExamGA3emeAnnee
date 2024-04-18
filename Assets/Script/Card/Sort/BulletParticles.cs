@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletParticles : MonoBehaviour
 {
     [SerializeField] ParticleSystem particles;
-    void Awake()
+    void Start()
     {
         GameObject particle = Instantiate(particles.gameObject);
         particle.transform.position = transform.position;

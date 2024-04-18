@@ -9,6 +9,6 @@ public class ValkyrieAttack : MonoBehaviour
     {
         GameObject particle = Instantiate(particles.gameObject);
         particle.transform.position = transform.position;
-        Destroy(particles.gameObject,3f);
+        Destroy(particle.gameObject, 1f);
     }
 }
