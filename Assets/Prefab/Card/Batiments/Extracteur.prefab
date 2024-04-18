@@ -438,6 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elixirCldwn: 5
+  particles: {fileID: 4944655681365026754, guid: 847f40587b7d23b4082a67c656602a3c, type: 3}
 --- !u!1 &8162247739444096888
 GameObject:
   m_ObjectHideFlags: 0

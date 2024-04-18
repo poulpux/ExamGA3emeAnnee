@@ -9,6 +9,7 @@ public class ExtracteurDElixir : MonoBehaviour
     private bool firstUpdate;
     private float timer;
     public float elixirCldwn;
+    [SerializeField] GameObject particles;
     void Update()
     {
         if(!firstUpdate)
@@ -23,6 +24,8 @@ public class ExtracteurDElixir : MonoBehaviour
         timer += Time.deltaTime;
         if(timer > elixirCldwn)
         {
+            GameObject particle = Instantiate(particles.gameObject);
+            particle.transform.position = transform.position;
             player.TakeElixir();
             timer = 0;
         }
