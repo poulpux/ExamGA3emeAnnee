@@ -17,6 +17,8 @@ public partial class Troupe : StateManager
     private bool active;
     private Sort bulletPrefab;
     [SerializeField] bool plusieurs;
+    [SerializeField] ParticleSystem getHit;
+    [SerializeField] List<ParticleSystem> listSlash = new List<ParticleSystem>();
 
     protected override void Awake()
     {
@@ -61,6 +63,15 @@ public partial class Troupe : StateManager
 
         rb = GetComponent<Rigidbody2D>();
     }
+
+    public override void TakeDamage(int nbDamage)
+    {
+        base.TakeDamage(nbDamage);
+        GameObject particle = Instantiate(getHit.gameObject);
+        particle.transform.position = transform.position;
+        particle.transform.localScale = new Vector3(transform.localScale.x * particle.transform.localScale.x, transform.localScale.y * particle.transform.localScale.y, transform.localScale.z * particle.transform.localScale.z);
+    }
+
     public override void Invoque(Vector3 spawnPos, bool J1)
     {
         GameObject objet = Instantiate(gameObject);

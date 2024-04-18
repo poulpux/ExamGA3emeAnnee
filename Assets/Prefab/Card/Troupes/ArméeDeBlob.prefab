@@ -143,6 +143,8 @@ MonoBehaviour:
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
   troupeInfo: {fileID: 11400000, guid: ef532aca63258d9458d287b096d03426, type: 2}
   plusieurs: 0
+  getHit: {fileID: 0}
+  listSlash: []
   distInterest: 2
 --- !u!50 &2089589504828958474
 Rigidbody2D:
@@ -398,6 +400,8 @@ MonoBehaviour:
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
   troupeInfo: {fileID: 11400000, guid: ef532aca63258d9458d287b096d03426, type: 2}
   plusieurs: 0
+  getHit: {fileID: 0}
+  listSlash: []
   distInterest: 2
 --- !u!50 &4247480351757095663
 Rigidbody2D:
@@ -684,6 +688,11 @@ MonoBehaviour:
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
   troupeInfo: {fileID: 11400000, guid: 507d1f2f83d573f4b91056475b099a2c, type: 2}
   plusieurs: 1
+  getHit: {fileID: 7032040736321994801, guid: dce30036330418c42b335e3f769049d2, type: 3}
+  listSlash:
+  - {fileID: 2614025510711383247, guid: 47fbef2ddeb2cb44db13c4c74392fae9, type: 3}
+  - {fileID: 1598479906131447970, guid: 5be240aadb26bb24398c101236435cb4, type: 3}
+  - {fileID: 2839156216590045713, guid: 4eb75d6936797bd40b83a16a5aa818ca, type: 3}
   distInterest: 2
 --- !u!1 &3464606859601081613
 GameObject:
@@ -912,6 +921,8 @@ MonoBehaviour:
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
   troupeInfo: {fileID: 11400000, guid: ef532aca63258d9458d287b096d03426, type: 2}
   plusieurs: 0
+  getHit: {fileID: 0}
+  listSlash: []
   distInterest: 2
 --- !u!50 &6905684885863209307
 Rigidbody2D:
@@ -1167,6 +1178,8 @@ MonoBehaviour:
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
   troupeInfo: {fileID: 11400000, guid: ef532aca63258d9458d287b096d03426, type: 2}
   plusieurs: 0
+  getHit: {fileID: 0}
+  listSlash: []
   distInterest: 2
 --- !u!50 &5180397327136007526
 Rigidbody2D:
@@ -1422,6 +1435,8 @@ MonoBehaviour:
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
   troupeInfo: {fileID: 11400000, guid: ef532aca63258d9458d287b096d03426, type: 2}
   plusieurs: 0
+  getHit: {fileID: 0}
+  listSlash: []
   distInterest: 2
 --- !u!50 &8001283165493964395
 Rigidbody2D:

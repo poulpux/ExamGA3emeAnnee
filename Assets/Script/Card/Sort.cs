@@ -110,7 +110,6 @@ public class Sort : Card
 
     public override void Invoque(Vector3 spawnPos, bool J1)
     {
-        print("invoque");
         GameObject objet = Instantiate(gameObject);
         objet.transform.position = spawnPos;
         objet.GetComponent<Card>().J1 = J1;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PEKAMother
   m_EditorClassIdentifier: 
   nameOfCard: P.A.C.A
-  description: Plus lumineux que son homonyme.
+  description: Bien plus lumineux que son homonyme.
   cost: 7
   type: 0
   damage: 300

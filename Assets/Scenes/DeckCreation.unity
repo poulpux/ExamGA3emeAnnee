@@ -820,7 +820,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Player 2 Ready
+  m_text: "Joueur 2 pr\xEAt"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -5050,7 +5050,7 @@ MonoBehaviour:
   listSave: 
   selectedCard: 2
   basicColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
-  selectedColor: {r: 0.4575472, g: 1, b: 1, a: 1}
+  selectedColor: {r: 0.7122642, g: 1, b: 1, a: 1}
   cursorColor: {r: 0, g: 1, b: 1, a: 1}
   textReady: {fileID: 1728343201}
 --- !u!4 &1074230449
@@ -9162,7 +9162,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Player 1 Ready
+  m_text: "Joueur 1 pr\xEAt"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -10964,7 +10964,7 @@ MonoBehaviour:
   listSave: 
   selectedCard: 2
   basicColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
-  selectedColor: {r: 1, g: 0.41037738, b: 0.41037738, a: 1}
+  selectedColor: {r: 1, g: 0.7311321, b: 0.7311321, a: 1}
   cursorColor: {r: 1, g: 0, b: 0, a: 1}
   textReady: {fileID: 134496103}
 --- !u!4 &2078172230

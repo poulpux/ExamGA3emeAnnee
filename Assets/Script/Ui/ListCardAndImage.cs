@@ -62,7 +62,7 @@ public class ListCardAndImage : MonoBehaviour
         type.text ="Type : "+ (cards[selectedCard].cardInfo.type == TYPE.TROUPE ? "Troupe" : cards[selectedCard].cardInfo.type == TYPE.SORT ? "Sort" : "Bâtiment");
 
         TextMeshProUGUI cost = J1 ? costJ1 : costJ2;
-        cost.text = "Cost : " + cards[selectedCard].cardInfo.cost;
+        cost.text = "Coût : " + cards[selectedCard].cardInfo.cost;
 
         TextMeshProUGUI pv = J1 ? pvJ1 : pvJ2;
         if (cards[selectedCard].cardInfo.type != TYPE.SORT)

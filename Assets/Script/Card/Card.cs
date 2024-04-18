@@ -36,7 +36,7 @@ public class Card : MonoBehaviour
 
     }
 
-    public void TakeDamage(int nbDamage)
+    public virtual void TakeDamage(int nbDamage)
     {
         pv -= nbDamage;
         spriteRenderer.color = CalculateColor(((float)pv / (float)cardInfo.pv));
