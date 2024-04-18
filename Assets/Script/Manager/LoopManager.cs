@@ -20,7 +20,7 @@ public class LoopManager : MonoBehaviour
     [SerializeField] BoxCollider2D J1Left, J1Right, J2Left, J2Right;
     [SerializeField] GameObject WinScreenObj;
     [SerializeField] TextMeshProUGUI textWinner, timerText;
-    [SerializeField] Card J1TourRoyale, J2TourRoyale, J1LeftTour, J1RightTour, J2LeftTour, J2RightTour;
+    [SerializeField] public Card J1TourRoyale, J2TourRoyale, J1LeftTour, J1RightTour, J2LeftTour, J2RightTour;
 
     [SerializeField] private List<Card> allCards = new List<Card> ();
     [SerializeField] Deck J1Deck, J2Deck;
