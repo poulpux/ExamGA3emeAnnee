@@ -24,6 +24,8 @@ public class LoopManager : MonoBehaviour
 
     [SerializeField] private List<Card> allCards = new List<Card> ();
     [SerializeField] Deck J1Deck, J2Deck;
+
+    [SerializeField] List<ParticleSystem> allSpeedParticles = new List<ParticleSystem> ();
     bool stopTimer;
     float timerLeave, timerGame = 180f;
     int nbTap;
@@ -47,6 +49,8 @@ public class LoopManager : MonoBehaviour
 
     private void Update()
     {
+        if (Time.time > 2f)
+            Time.timeScale = 5;
         TimerGameGestion();
         LeaveSecurity();
     }
@@ -156,6 +160,8 @@ public class LoopManager : MonoBehaviour
     {
         yield return new WaitForSeconds(120f);
         SpeedUpEvent.Invoke();
+        foreach (var item in allSpeedParticles)
+            item.gameObject.SetActive(true);
         yield break;
     }
     
