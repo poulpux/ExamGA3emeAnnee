@@ -10062,6 +10062,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particle System
       objectReference: {fileID: 0}
+    - target: {fileID: 4939643530609383862, guid: 1f61387fd2d06784f8cf72fe8d8288dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7103065212164301542, guid: 1f61387fd2d06784f8cf72fe8d8288dc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5

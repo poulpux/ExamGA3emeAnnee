@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BrumeCreation : MonoBehaviour
 {
+    [SerializeField] ParticleSystem particle;
     private void OnDestroy()
     {
-        print("creatBrume");
+        GameObject brume = Instantiate(particle.gameObject);
+        brume.transform.position = transform.position;
     }
 }
