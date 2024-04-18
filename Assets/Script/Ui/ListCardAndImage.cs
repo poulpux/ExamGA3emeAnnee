@@ -34,31 +34,31 @@ public class ListCardAndImage : MonoBehaviour
 
     private void SetSaveInt()
     {
-        if (PlayerPrefs.GetInt("C1J1") != PlayerPrefs.GetInt("C2J1"))
-        {
-            for (int i = 1; i < 7; i++)
-            {
-                int index = PlayerPrefs.GetInt("C" + i + "J1");
-                J1.listSave.Add(index);
-            }
-        }
-        else
-        {
+        //if (PlayerPrefs.GetInt("C1J1") != PlayerPrefs.GetInt("C2J1"))
+        //{
+        //    for (int i = 1; i < 7; i++)
+        //    {
+        //        int index = PlayerPrefs.GetInt("C" + i + "J1");
+        //        J1.listSave.Add(index);
+        //    }
+        //}
+        //else
+        //{
             J1.listSave.Clear();
-        }
+        //}
 
-        if (PlayerPrefs.GetInt("C1J2") != PlayerPrefs.GetInt("C2J2"))
-        {
-            for (int i = 1; i < 7; i++)
-            {
-                int index = PlayerPrefs.GetInt("C" + i + "J2");
-                J2.listSave.Add(index);
-            }
-        }
-        else
-        {
+        //if (PlayerPrefs.GetInt("C1J2") != PlayerPrefs.GetInt("C2J2"))
+        //{
+        //    for (int i = 1; i < 7; i++)
+        //    {
+        //        int index = PlayerPrefs.GetInt("C" + i + "J2");
+        //        J2.listSave.Add(index);
+        //    }
+        //}
+        //else
+        //{
             J2.listSave.Clear();
-        }
+        //}
     }
 
     private void J1Description(int selectedCard, bool J1)
