@@ -165,7 +165,7 @@ public class LoopManager : MonoBehaviour
     
     private IEnumerator EndWithTime()
     {
-        yield return new WaitForSeconds(180f);
+        yield return new WaitForSeconds(240f);
         int nbTourJ1 = (J1LeftTour != null ? 1 : 0) + (J1RightTour != null ? 1 : 0);
         int nbTourJ2 = (J2LeftTour != null ? 1 : 0) + (J2RightTour != null ? 1 : 0);
 

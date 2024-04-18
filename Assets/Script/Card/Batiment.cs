@@ -23,6 +23,8 @@ public class Batiment : Card
     private Sort bulletPrefab;
     private float attackSpd, bulletSpd, timeAlife;
     private float lifeTimer;
+
+    [SerializeField] ParticleSystem hitParticle;
     protected override void Awake()
     {
         base.Awake();
@@ -75,6 +77,19 @@ public class Batiment : Card
         spriteRenderer.color = J1 ?  new Color(0f,1f,1f) : new Color(1f,0f,0f);
     }
 
+    public override void TakeDamage(int nbDamage)
+    {
+        base.TakeDamage(nbDamage);
+        if (hitParticle != null && nbDamage >3)
+        {
+            GameObject particle = Instantiate(hitParticle.gameObject);
+            particle.transform.position = transform.position;
+            particle.transform.localScale = new Vector3(transform.localScale.x * particle.transform.localScale.x, transform.localScale.y * particle.transform.localScale.y, transform.localScale.z * particle.transform.localScale.z);
+            Destroy(particle.gameObject, 1f);
+        }
+    }
+
+
     private void Attack()
     {
         Sort bullet = Instantiate(bulletPrefab);
@@ -112,11 +127,19 @@ public class Batiment : Card
     protected override void GetDestroy()
     {
         if (batType == BATIMENTTYPE.CARD)
-            base.GetDestroy();
+        {
+            Transform[] children = new Transform[transform.childCount];
+            for (int i = 0; i < transform.childCount; i++)
+                children[i] = transform.GetChild(i);
+            foreach (Transform child in children)
+                Destroy(child.gameObject);
+
+            Destroy(gameObject);
+        }
         else
         {
-            GetComponent<Collider2D>().enabled = false; 
-            spriteRenderer.color = new Color(222f/255f, 222f / 255f, 222f / 255f);
+            GetComponent<Collider2D>().enabled = false;
+            spriteRenderer.color = new Color(222f / 255f, 222f / 255f, 222f / 255f);
             if (batType == BATIMENTTYPE.LEFT)
             {
                 GetComponent<Collider2D>().enabled = false;

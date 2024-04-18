@@ -7336,8 +7336,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPos: {fileID: 2138028724}
   prefabElixir: {fileID: 5864764228414619517, guid: d0cedb26b7ab9e24d8e5055b1593259b, type: 3}
-  CldwnNormal: 2
-  CldwnFast: 1.1
+  CldwnNormal: 3
+  CldwnFast: 1.5
   random: 0
   timeToDestroy: 15
 --- !u!1 &1566385549

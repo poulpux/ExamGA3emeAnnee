@@ -150,7 +150,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 3
 --- !u!114 &5734250320531421711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   pv: 0
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
   batInfo: {fileID: 11400000, guid: 7a7dc826af53b8943aa797940aa4712b, type: 2}
-  getHitBatiment: {fileID: 9076731304466234746, guid: ca8ff7dc47afcd6488dd3197293b528c, type: 3}
+  hitParticle: {fileID: 9076731304466234746, guid: ca8ff7dc47afcd6488dd3197293b528c, type: 3}
 --- !u!114 &2959102188076523716
 MonoBehaviour:
   m_ObjectHideFlags: 0
