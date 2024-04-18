@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7943077321983793778}
   - component: {fileID: 306139062641802069}
   - component: {fileID: 3889359031649486377}
+  - component: {fileID: -6128736660685863941}
   m_Layer: 0
   m_Name: ValkyAttack
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6, y: 1.6, z: 1}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,7 +42,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8129945388008553990}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -139,4 +140,20 @@ MonoBehaviour:
   damage: 0
   pv: 0
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
-  sortInfo: {fileID: 11400000, guid: 83f9a79ea1d81fc4b8595d1fda1e2d73, type: 2}
+  sortInfo: {fileID: 11400000, guid: de246a7b993aa7943bbd47b5809ba594, type: 2}
+  OnActivationEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-6128736660685863941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8129945388008553990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea2858ad71b9584fbe889610b5c2d9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 4048688756534810898, guid: 41bb2cdd226ed8e4cb4de99a2f0b2901, type: 3}

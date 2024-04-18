@@ -48,9 +48,9 @@ public partial class Troupe
     {
         if (attackType == ATTACKTYPE.DISTANCE)
         {
-            Sort bullet = Instantiate(bulletPrefab);
+            GameObject bullet = Instantiate(bulletPrefab.gameObject);
             bullet.transform.position = transform.position;
-            bullet.SetAllValue(targetAttack, bulletSpd, damage, J1);
+            bullet.GetComponent<Sort>().SetAllValue(targetAttack, bulletSpd, damage, J1);
         }
         else
         {
