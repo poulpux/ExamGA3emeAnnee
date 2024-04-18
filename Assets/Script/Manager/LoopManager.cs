@@ -20,10 +20,12 @@ public class LoopManager : MonoBehaviour
     [SerializeField] BoxCollider2D J1Left, J1Right, J2Left, J2Right;
     [SerializeField] GameObject WinScreenObj;
     [SerializeField] TextMeshProUGUI textWinner, timerText;
-    [SerializeField] Card J1Tour, J2Tour;
+    [SerializeField] Card J1TourRoyale, J2TourRoyale, J1LeftTour, J1RightTour, J2LeftTour, J2RightTour;
 
     [SerializeField] private List<Card> allCards = new List<Card> ();
     [SerializeField] Deck J1Deck, J2Deck;
+
+    [SerializeField] List<ParticleSystem> allSpeedParticles = new List<ParticleSystem> ();
     bool stopTimer;
     float timerLeave, timerGame = 180f;
     int nbTap;
@@ -47,6 +49,8 @@ public class LoopManager : MonoBehaviour
 
     private void Update()
     {
+        if (Time.time > 2f)
+            Time.timeScale = 5;
         TimerGameGestion();
         LeaveSecurity();
     }
@@ -156,13 +160,43 @@ public class LoopManager : MonoBehaviour
     {
         yield return new WaitForSeconds(120f);
         SpeedUpEvent.Invoke();
+        foreach (var item in allSpeedParticles)
+            item.gameObject.SetActive(true);
         yield break;
     }
     
     private IEnumerator EndWithTime()
     {
         yield return new WaitForSeconds(180f);
-        MiddleTourDestroyEvent.Invoke(J1Tour.pv > J2Tour.pv ? false : true);
+        int nbTourJ1 = (J1LeftTour != null ? 1 : 0) + (J1RightTour != null ? 1 : 0);
+        int nbTourJ2 = (J2LeftTour != null ? 1 : 0) + (J2RightTour != null ? 1 : 0);
+
+        //Si Un des joueur a plus de tour
+        if(nbTourJ1 !=  nbTourJ2)
+            MiddleTourDestroyEvent.Invoke(nbTourJ1 > nbTourJ2 ? false : true);
+        else
+        {
+            int lowerstHpJ1 = 100000;
+            int lowerstHpJ2 = 100000;
+
+            if (J1LeftTour != null)
+                lowerstHpJ1 = J1LeftTour.pv;
+            else if (J1RightTour != null && J1RightTour.pv < lowerstHpJ1)
+                lowerstHpJ1 = J1RightTour.pv;
+            else if (J1TourRoyale.pv < lowerstHpJ1)
+                lowerstHpJ1 = J1TourRoyale.pv;
+
+
+            if (J2LeftTour != null)
+                lowerstHpJ2 = J2LeftTour.pv;
+            else if (J2RightTour != null && J2RightTour.pv < lowerstHpJ2)
+                lowerstHpJ2 = J2RightTour.pv;
+            else if (J2TourRoyale.pv < lowerstHpJ2)
+                lowerstHpJ2 = J2TourRoyale.pv;
+
+
+            MiddleTourDestroyEvent.Invoke(lowerstHpJ1 > lowerstHpJ2 ? false : true);
+        }
         yield break;
     }
 
