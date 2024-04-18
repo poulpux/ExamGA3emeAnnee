@@ -26,6 +26,7 @@ public class ExtracteurDElixir : MonoBehaviour
         {
             GameObject particle = Instantiate(particles.gameObject);
             particle.transform.position = transform.position;
+            Destroy(particles.gameObject, 1f);
             player.TakeElixir();
             timer = 0;
         }

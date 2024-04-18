@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ValkyrieAttack : MonoBehaviour
+public class BulletParticles : MonoBehaviour
 {
-    [SerializeField] GameObject particles;
-    void Start()
+    [SerializeField] ParticleSystem particles;
+    void Awake()
     {
         GameObject particle = Instantiate(particles.gameObject);
         particle.transform.position = transform.position;
-        Destroy(particles.gameObject,3f);
+        Destroy(particle.gameObject, 1f);
     }
 }

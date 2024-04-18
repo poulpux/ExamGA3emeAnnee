@@ -70,6 +70,7 @@ public partial class Troupe : StateManager
         GameObject particle = Instantiate(getHit.gameObject);
         particle.transform.position = transform.position;
         particle.transform.localScale = new Vector3(transform.localScale.x * particle.transform.localScale.x, transform.localScale.y * particle.transform.localScale.y, transform.localScale.z * particle.transform.localScale.z);
+        Destroy(particle.gameObject, 1f);
     }
 
     public override void Invoque(Vector3 spawnPos, bool J1)

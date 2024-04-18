@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8812102336305666965}
   - component: {fileID: 3168540729817434006}
   - component: {fileID: -6406641252663163753}
+  - component: {fileID: 3014547488158825458}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -140,3 +141,19 @@ MonoBehaviour:
   pv: 0
   knob: {fileID: 0}
   sortInfo: {fileID: 11400000, guid: de246a7b993aa7943bbd47b5809ba594, type: 2}
+  OnActivationEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3014547488158825458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8937958798483763454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc34d905ea7bf15479fde3b5e11f2ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 1098682836934814238, guid: 632de4feef1c65b4ea2c6d9a0e707a20, type: 3}
