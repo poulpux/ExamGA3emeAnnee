@@ -141,6 +141,9 @@ MonoBehaviour:
   pv: 0
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
   sortInfo: {fileID: 11400000, guid: de246a7b993aa7943bbd47b5809ba594, type: 2}
+  OnActivationEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2217020626203356973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,5 +156,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47f704fdbffd9d4185f7ea22cd55e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exploChampiPrefab: {fileID: 1165698918848150617, guid: 91bb10081d928ef409d1b9ef9a4b33de, type: 3}
   damage: 30
+  particles: {fileID: 1222703979625772073, guid: 00bb15dd6373ca44dbba836f29ad4ac9, type: 3}
