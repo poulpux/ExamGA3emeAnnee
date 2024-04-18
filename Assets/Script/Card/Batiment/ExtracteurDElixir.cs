@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class ExtracteurDElixir : MonoBehaviour 
 {
@@ -24,8 +25,9 @@ public class ExtracteurDElixir : MonoBehaviour
         timer += Time.deltaTime;
         if(timer > elixirCldwn)
         {
-            GameObject particle = Instantiate(particles.gameObject);
-            particle.transform.position = transform.position;
+            GameObject brume = Instantiate(particles.gameObject);
+            brume.transform.position = transform.position;
+            Destroy(brume.gameObject, 1f);
             player.TakeElixir();
             timer = 0;
         }

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ValkyrieAttack : MonoBehaviour
+public class BulletParticles : MonoBehaviour
 {
-    [SerializeField] GameObject particles;
+    [SerializeField] ParticleSystem particles;
     void Start()
     {
         GameObject particle = Instantiate(particles.gameObject);

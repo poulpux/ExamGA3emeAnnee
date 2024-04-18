@@ -22,7 +22,7 @@ public class Batiment : Card
     private BATIMENTTYPE batType;
     private Sort bulletPrefab;
     private float attackSpd, bulletSpd, timeAlife;
-    private float lifeTimer; 
+    private float lifeTimer;
     protected override void Awake()
     {
         base.Awake();
@@ -39,7 +39,7 @@ public class Batiment : Card
 
     void Start()
     {
-        LoopManager.Instance.LeftTourDestroyEvent.AddListener((J12) => { if (J1 == J12 && !activate && batType == BATIMENTTYPE.MIDDLE) Activate(); });
+        //LoopManager.Instance.LeftTourDestroyEvent.AddListener((J12) => { if (J1 == J12 && batType == BATIMENTTYPE.MIDDLE) Activate(); });
     }
 
     void Update()
@@ -47,10 +47,11 @@ public class Batiment : Card
 
         if (!activate && batType == BATIMENTTYPE.MIDDLE && pv < cardInfo.pv)
             Activate();
-        if (Input.GetKeyUp(KeyCode.P) && batType == BATIMENTTYPE.LEFT)
-            TakeDamage(10000);
 
-        if(!activate)
+        if (!activate && batType == BATIMENTTYPE.MIDDLE && ((J1 ? LoopManager.Instance.J1LeftTour : LoopManager.Instance.J2LeftTour).isActiveAndEnabled ==false || (J1 ? LoopManager.Instance.J1RightTour : LoopManager.Instance.J2RightTour).isActiveAndEnabled == false))
+            Activate();
+
+        if (!activate)
             return;
 
         UndetectEnnemy();
@@ -90,13 +91,22 @@ public class Batiment : Card
 
     private void DetectEnnemy()
     {
+        Card saveCard = null;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, range, !J1 ? (1<< LayerMask.NameToLayer("TroupeP1")) : (1 << LayerMask.NameToLayer("TroupeP2")));
         foreach (var item in colliders)
         {
             Card targetCard = item.GetComponent<Card>();
-            if(targetCard != null && targetCard.cardInfo.type != TYPE.SORT)  
-                target = targetCard;
+
+            if (targetCard != null && targetCard.cardInfo.type != TYPE.SORT)
+            {
+                if(saveCard == null)
+                    saveCard = targetCard;
+                else if(Vector3.Distance(transform.position, targetCard.transform.position)< Vector3.Distance(transform.position, saveCard.transform.position))
+                    saveCard = targetCard;
+            }
         }
+        if(saveCard !=null)
+            target = saveCard;
     }
 
     protected override void GetDestroy()
