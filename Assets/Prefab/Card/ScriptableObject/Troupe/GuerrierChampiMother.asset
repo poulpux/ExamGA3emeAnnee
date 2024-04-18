@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GuerrierChampiMother
   m_EditorClassIdentifier: 
   nameOfCard: Chancepore
+  description: 
   cost: 4
   type: 0
-  damage: 50
+  damage: 80
   pv: 750

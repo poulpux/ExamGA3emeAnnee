@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Bien plus lumineux que son homonyme.
   cost: 7
   type: 0
-  damage: 300
+  damage: 370
   pv: 2100

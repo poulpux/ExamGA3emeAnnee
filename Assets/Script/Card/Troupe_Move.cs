@@ -16,14 +16,14 @@ public partial class Troupe
     }
     private void onMoveUpdate()
     {
-        if (interestTarget != null && Vector3.Distance(transform.position, interestTarget.transform.position) > distInterest)
-        {
-            interestTarget = null;
-            targetMove = Vector3.zero;
-        }
+        //if (interestTarget != null && Vector3.Distance(transform.position, interestTarget.transform.position) > distInterest)
+        //{
+        //    interestTarget = null;
+        //    targetMove = Vector3.zero;
+        //}
 
-        if (interestTarget == null ) 
-            DetectInterrest();
+        //if (interestTarget == null ) 
+        //    DetectInterrest();
 
         if (targetMove == Vector3.zero || Vector3.Distance(transform.position, targetMove) < 1f )
             SetTargetMove();

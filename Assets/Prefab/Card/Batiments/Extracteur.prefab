@@ -425,7 +425,6 @@ MonoBehaviour:
   pv: 0
   knob: {fileID: 2255256377999853931, guid: a8c04dafce2cdbc4889cd1f163908cc4, type: 3}
   batInfo: {fileID: 11400000, guid: a64bdcfbb08561549b1c9eb129cfd37a, type: 2}
-  getHitBatiment: {fileID: 9076731304466234746, guid: ca8ff7dc47afcd6488dd3197293b528c, type: 3}
 --- !u!114 &3154538510585435289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4f8db066f0811478219195b9fa6cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elixirCldwn: 5
+  elixirCldwn: 8
   particles: {fileID: 4944655681365026754, guid: 847f40587b7d23b4082a67c656602a3c, type: 3}
 --- !u!1 &8162247739444096888
 GameObject:
