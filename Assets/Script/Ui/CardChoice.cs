@@ -22,6 +22,7 @@ public class CardChoice : GetInput
         isInvoquingEvent.AddListener(() => SaveNumber());
         SetCadre();
         SwitchSelectEvent.Invoke(selectedCard);
+        SetReady();
     }
 
 

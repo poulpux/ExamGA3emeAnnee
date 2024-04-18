@@ -34,7 +34,6 @@ public class ListCardAndImage : MonoBehaviour
 
     private void SetSaveInt()
     {
-        print(PlayerPrefs.GetInt("C1J1") + " " + PlayerPrefs.GetInt("C2J1"));
         if (PlayerPrefs.GetInt("C1J1") != PlayerPrefs.GetInt("C2J1"))
         {
             for (int i = 1; i < 7; i++)
