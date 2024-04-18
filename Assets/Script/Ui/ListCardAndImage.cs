@@ -34,6 +34,7 @@ public class ListCardAndImage : MonoBehaviour
 
     private void SetSaveInt()
     {
+        print(PlayerPrefs.GetInt("C1J1") + " " + PlayerPrefs.GetInt("C2J1"));
         if (PlayerPrefs.GetInt("C1J1") != PlayerPrefs.GetInt("C2J1"))
         {
             for (int i = 1; i < 7; i++)
@@ -41,6 +42,10 @@ public class ListCardAndImage : MonoBehaviour
                 int index = PlayerPrefs.GetInt("C" + i + "J1");
                 J1.listSave.Add(index);
             }
+        }
+        else
+        {
+            J1.listSave.Clear();
         }
 
         if (PlayerPrefs.GetInt("C1J2") != PlayerPrefs.GetInt("C2J2"))
@@ -50,6 +55,10 @@ public class ListCardAndImage : MonoBehaviour
                 int index = PlayerPrefs.GetInt("C" + i + "J2");
                 J2.listSave.Add(index);
             }
+        }
+        else
+        {
+            J2.listSave.Clear();
         }
     }
 
