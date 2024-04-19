@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TourMiddleMother
   m_EditorClassIdentifier: 
   nameOfCard: TourMiddle
+  description: 
   cost: 0
   type: 1
   damage: 65
-  pv: 3200
-  visuUi: {fileID: 0}
+  pv: 2000

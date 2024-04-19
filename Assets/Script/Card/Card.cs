@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static Unity.VisualScripting.Metadata;
 
 public enum TYPE
 {
@@ -60,8 +59,8 @@ public class Card : MonoBehaviour
     {
         this.J1 = J1;
         gameObject.layer = LayerMask.NameToLayer(J1 ? "TroupeP1" : "TroupeP2");
-        GameObject sprite = Instantiate(knob.gameObject, transform.position, transform.rotation, null);
-        sprite.GetComponent<SpriteRenderer>().color = J1 ? Color.cyan : Color.red;
+        //GameObject sprite = Instantiate(knob.gameObject, transform.position, transform.rotation, null);
+        //sprite.GetComponent<SpriteRenderer>().color = J1 ? Color.cyan : Color.red;
     }
 
     private void InstantiateAll()

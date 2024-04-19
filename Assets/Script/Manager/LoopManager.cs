@@ -139,6 +139,7 @@ public class LoopManager : MonoBehaviour
             timer += Time.unscaledDeltaTime;
             yield return null;
         }
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
         yield break;
     }

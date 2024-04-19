@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameOfCard: Jugement divin
   description: Inviktus Purifikatum Cadavra
-  cost: 4
+  cost: 5
   type: 2
   damage: 380
   pv: 0

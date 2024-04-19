@@ -952,7 +952,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 617.8, y: 451}
+  m_AnchoredPosition: {x: 617.8, y: 400}
   m_SizeDelta: {x: 674.9, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &134496103
@@ -5490,6 +5490,7 @@ MonoBehaviour:
   selectedColor: {r: 0.7122642, g: 1, b: 1, a: 1}
   cursorColor: {r: 0, g: 1, b: 1, a: 1}
   textReady: {fileID: 1728343201}
+  lerpDuration: 0.3
 --- !u!4 &1074230449
 Transform:
   m_ObjectHideFlags: 0
@@ -9576,7 +9577,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -617.8, y: 451}
+  m_AnchoredPosition: {x: -617.8, y: 400}
   m_SizeDelta: {x: 674.9, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1728343201
@@ -11404,6 +11405,7 @@ MonoBehaviour:
   selectedColor: {r: 1, g: 0.7311321, b: 0.7311321, a: 1}
   cursorColor: {r: 1, g: 0, b: 0, a: 1}
   textReady: {fileID: 134496103}
+  lerpDuration: 0.3
 --- !u!4 &2078172230
 Transform:
   m_ObjectHideFlags: 0

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TourRightMother
   m_EditorClassIdentifier: 
   nameOfCard: TourRight
+  description: 
   cost: 0
   type: 1
   damage: 38
-  pv: 2000
-  visuUi: {fileID: 0}
+  pv: 1400
