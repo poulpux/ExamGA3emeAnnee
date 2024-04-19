@@ -48,7 +48,7 @@ public class GetInput : MonoBehaviour
     
     private void CallInvoque(InputAction.CallbackContext value)
     {
-        if (value.ReadValue<float>() > 0f)
+        if (value.ReadValue<float>() > 0f && Time.timeScale > 0.2f)
             isInvoquingEvent.Invoke();
     }
     
