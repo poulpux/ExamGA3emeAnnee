@@ -189,7 +189,7 @@ public partial class @InputSystemManette: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3c9a3361-d40b-4de2-8411-25a660cebf01"",
-                    ""path"": ""<Keyboard>/numpadEnter"",
+                    ""path"": ""<Keyboard>/numpadPlus"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
