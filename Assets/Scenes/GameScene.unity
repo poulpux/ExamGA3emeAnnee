@@ -388,6 +388,7 @@ MonoBehaviour:
   pv: 0
   knob: {fileID: 0}
   batInfo: {fileID: 11400000, guid: 17249b712e6497d4ea56b8b318da2d39, type: 2}
+  hitParticle: {fileID: 0}
 --- !u!58 &35686729
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1847,6 +1848,7 @@ MonoBehaviour:
   pv: 0
   knob: {fileID: 0}
   batInfo: {fileID: 11400000, guid: d4b758cf06e1ede4ea76fc0cf79ae1aa, type: 2}
+  hitParticle: {fileID: 0}
 --- !u!58 &410146124
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5909,6 +5911,7 @@ MonoBehaviour:
   pv: 0
   knob: {fileID: 0}
   batInfo: {fileID: 11400000, guid: d4b758cf06e1ede4ea76fc0cf79ae1aa, type: 2}
+  hitParticle: {fileID: 0}
 --- !u!58 &1201366448
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8017,7 +8020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1735367353
 Transform:
   m_ObjectHideFlags: 0
@@ -9448,6 +9451,7 @@ MonoBehaviour:
   pv: 0
   knob: {fileID: 0}
   batInfo: {fileID: 11400000, guid: 17249b712e6497d4ea56b8b318da2d39, type: 2}
+  hitParticle: {fileID: 0}
 --- !u!58 &1892308505
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9925,6 +9929,7 @@ MonoBehaviour:
   pv: 0
   knob: {fileID: 0}
   batInfo: {fileID: 11400000, guid: 8f67e66e8e4641142b3ca9bf0fcdc457, type: 2}
+  hitParticle: {fileID: 0}
 --- !u!58 &1982241602
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10551,6 +10556,7 @@ MonoBehaviour:
   pv: 0
   knob: {fileID: 0}
   batInfo: {fileID: 11400000, guid: 8f67e66e8e4641142b3ca9bf0fcdc457, type: 2}
+  hitParticle: {fileID: 0}
 --- !u!58 &2034433816
 CircleCollider2D:
   m_ObjectHideFlags: 0

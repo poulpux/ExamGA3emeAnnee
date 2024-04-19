@@ -26,7 +26,7 @@ public class LoopManager : MonoBehaviour
     [SerializeField] Deck J1Deck, J2Deck;
 
     [SerializeField] List<ParticleSystem> allSpeedParticles = new List<ParticleSystem> ();
-    bool stopTimer;
+    bool stopTimer, spdUp, pasRep;
     float timerLeave, timerGame = 180f;
     int nbTap;
     private void Awake()
@@ -43,12 +43,21 @@ public class LoopManager : MonoBehaviour
         StartCoroutine(StartGame());
         StartCoroutine(SpeedUp());
         StartCoroutine(EndWithTime());
+        StartCoroutine(OverTime());
 
         SetCardOfTheDeck();
     }
 
     private void Update()
-    {
+    { 
+        int nbTourJ1 = (J1LeftTour.isActiveAndEnabled ? 1 : 0) + (J1RightTour.isActiveAndEnabled ? 1 : 0);
+        int nbTourJ2 = (J2LeftTour.isActiveAndEnabled ? 1 : 0) + (J2RightTour.isActiveAndEnabled ? 1 : 0);
+        if (spdUp && nbTourJ1 != nbTourJ2 && !pasRep)
+        {
+            pasRep = true;
+            MiddleTourDestroyEvent.Invoke(nbTourJ1 > nbTourJ2 ? false : true);
+        }
+
         TimerGameGestion();
         LeaveSecurity();
     }
@@ -163,11 +172,18 @@ public class LoopManager : MonoBehaviour
         yield break;
     }
     
+    private IEnumerator OverTime()
+    {
+        yield return new WaitForSeconds(180);
+        spdUp = true;
+        yield break;
+    }
+    
     private IEnumerator EndWithTime()
     {
         yield return new WaitForSeconds(240f);
-        int nbTourJ1 = (J1LeftTour != null ? 1 : 0) + (J1RightTour != null ? 1 : 0);
-        int nbTourJ2 = (J2LeftTour != null ? 1 : 0) + (J2RightTour != null ? 1 : 0);
+        int nbTourJ1 = (J1LeftTour.isActiveAndEnabled  ? 1 : 0) + (J1RightTour.isActiveAndEnabled ? 1 : 0);
+        int nbTourJ2 = (J2LeftTour.isActiveAndEnabled  ? 1 : 0) + (J2RightTour.isActiveAndEnabled  ? 1 : 0);
 
         //Si Un des joueur a plus de tour
         if(nbTourJ1 !=  nbTourJ2)
