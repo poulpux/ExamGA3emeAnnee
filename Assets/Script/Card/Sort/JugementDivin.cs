@@ -8,6 +8,7 @@ public class JugementDivin : MonoBehaviour
     [SerializeField] ParticleSystem particle;
     private void OnDestroy()
     {
+        LoopManager.Instance.HolyInvoqueEvent.Invoke();
         GameObject particleSacred = Instantiate(particle.gameObject);
         particleSacred.transform.position = transform.position; 
         Destroy(particleSacred.gameObject, 0.3f);

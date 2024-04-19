@@ -16,6 +16,7 @@ public class LoopManager : MonoBehaviour
     [HideInInspector] public UnityEvent<bool> MiddleTourDestroyEvent = new UnityEvent<bool> ();
 
     [HideInInspector] public UnityEvent SpeedUpEvent = new UnityEvent();
+    [HideInInspector] public UnityEvent HolyInvoqueEvent = new UnityEvent ();
 
     [SerializeField] BoxCollider2D J1Left, J1Right, J2Left, J2Right;
     [SerializeField] GameObject WinScreenObj;
